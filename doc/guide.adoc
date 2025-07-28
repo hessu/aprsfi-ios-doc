@@ -2,13 +2,9 @@
 = aprs.fi iOS User Guide
 :toc:
 
-Welcome to the aprs.fi iOS app! I thank you for your purchase, it'll help me
-to keep the service running.  This brief guide will get you started.
+Welcome to the aprs.fi iOS app! I thank you for your purchase, it'll help me to keep the service running.  This guide will get you started.
 
-The aprs.fi app is a quick and mobile device friendly version of the
-familiar web service.  It downloads current APRS information directly from
-the aprs.fi service and displays it instantly.  The same app works great on
-all current iPhones and iPads.
+The aprs.fi app is a quick and mobile device friendly version of the familiar web service.  It downloads current APRS information directly from the aprs.fi service and displays it instantly.  It can also be attached to a radio for the proper Amateur Radio experience.  The app works great on all current iPhones and iPads.
 
 == Before we start
 
@@ -55,13 +51,21 @@ To center on a currently tracked station, tap the respective callsign button in 
 
 If you zoom out far enough, the amount of data presented may be a little bit too much for the device, and updates will be paused. Zoom in to refresh again.
 
+=== Map time range
+
+To change the time range of the map, tap the *Time range* button in the bottom of the map view. The time range selects how far back in time the stations are shown on the map.
+
+The default time range is 1 hour, but you can select from a number of predefined ranges.
+
 === Filters
 
 To filter the stations shown on the map, tap the *Filter* (funnel) button in the bottom of the map view. A few default filters are set up as an example and can be simply enabled and disabled. Filters are not applied when tracking specific stations.
 
-The filter chain has two sections: *Display these* and *But not these*. The *Display these* section contains the filters that must match for a station to be shown on the map. If nothing matches the filters, no stations will be shown – enable the "All stations" filter to show all stations again.
+The filter chain has two sections: *Display these* and *But not these*. If one of the enabled filters in the *Display these* section matches a station, it will be shown on the map. If nothing matches the filters, no stations will be shown – enable the "All stations" filter to show all stations again.
 
 The *But not these* section contains the filters that will hide stations which would otherwise be shown by the previous filters. It can be used to create exceptions. Press the red and blue up/down buttons on the right to move filters between the two sections.
+
+Each of the filters in the chain can be enabled and disabled independently with the toggle switch on the left.
 
 Press the *+* button to add a custom filter. You can set up filters for any combination of the following criteria:
 
@@ -80,11 +84,25 @@ Press the *+* button to add a custom filter. You can set up filters for any comb
 
 A single filter can compare for multiple criteria. For example, you may wish to show all stations with a specific symbol, but only those which are moving faster than 10 km/h. Press the *+* button to add comparison, and press *OK* when the filter is ready.
 
+=== Map symbol and text size
+
+To change the station symbol size and the text size on the map, repeatedly press the scale button on the bottom of the map.  This cycles through the three available sizes.
+
+=== Map style
+
+To change between navigation and satellite map styles, tap the *Map style* button in the bottom of the map view.
+
+The *Navigation* style is a standard map with streets and place names, while the *Satellite* style shows satellite imagery.  The third option is *Hybrid*, which combines the two styles, showing streets and place names on top of the satellite imagery.
+
+The app currently uses Apple Maps for the map view.
+
 === The app remembers your last view
 
-The application stores the last view and map settings, so the next time you open the app, it will show the same view as you left it. It will even remember them if you power off the iPhone and turn it back on later.
+The application stores the last view and map settings, so the next time you open the app, it will show the same view as you left it. It remembers filter settings, the tracked stations, and the map position and zoom level. It will even remember them if you power off the iPhone and turn it back on later.
 
-However, if you manually terminate the app, iOS will delete the state restoration file. This may be useful if the app is misbehaving and you want to reset it.
+However, if you choose to manually terminate the app by swiping it away in the app switcher, iOS will delete the state restoration file. The app will then open up with the default view. This may be useful if the app is misbehaving and you want to reset it.
+
+Manual termination of apps is normally not necessary, as iOS will automatically stop apps in the background, and release them from memory when memory is needed for other apps. This is transparent to the user, as the apps will be restarted automatically when you open them again. Apps are not allowed to execute in the background for long periods of time, so they will not consume battery power when you are not using them.
 
 === If nothing is shown on the map
 
@@ -98,6 +116,10 @@ Pull the information table down to refresh the information. It will be refreshed
 Additional graphs can be drawn for many stations. On an iPhone, the graphs can be accessed using the graphs button in the top right corner, or by swiping.
 
 === Favourite stations
+
+You can add stations to your favourites by tapping the *Star* button in the *station details* view. Favourites are shown in the *Favourites* tab in *Search*, and can be tracked from there. On the iPad, starting from iOS 18, the search text entry field needs to be activated to view the search scope tabs (Stations, Favourites, Addresses).
+
+Favourite stations are synchronised with the aprs.fi service, so they are available on all your devices. You can also access your favourites on the web site using the *Star* button on the right side of the map view.
 
 
 == Beaconing your position
@@ -113,18 +135,45 @@ to APRS-IS can be enabled with a switch while the Extra Features subscription is
 Transmitting positions on the APRS-IS requires an amateur radio license and
 valid callsign.
 
-You may set up multiple APRS station profiles in the app, each with different
-symbol and other settings, allowing quick switching between the stations.
+=== Beacon profiles
 
-Increasing *minimum transmit interval* will reduce the frequency of
-transmitted beacons.  If you wish to transmit a less exact position for
-for privacy reasons, you can increase the minimum interval and enable
-*position ambiguity* to further reduce position accuracy.
+You may set up multiple APRS station profiles in the app, each with different symbol and other settings, allowing quick switching between the stations.
 
-Decreasing *maximum transmit interval* will increase the frequency
-of transmitted beacons while you are not moving.
+To set up a new profile in the *Beacon* tab, tap the current station callsign to view the list of profiles.  Tap the *New station* button, and enter the callsign, SSID (Secondary System Identifier), and other settings for the new profile.
 
-If the minimum and maximum interval are not set to the same value, a dynamic algorithm to schedule transmissions is used. Beacons are sent more often when moving faster, or when tight turns are detected. When you're not moving, a beacon will be sent out every *maximum interval*.
+The SSID is a number between 1 and 15, appended to the callsign with a hyphen, e.g. `OH7RDA-1`. The SSID is optional, but it is needed to distinguish between different stations and devices of a single user. The SSID if 0 is, by convention, reserved for the main station, and not shown.
+
+Non-numeric SSIDs of one or two characters are allowed, but they cannot be used when beaconing to APRS-IS, or when using a TNC.
+
+To rename a profile, tap the *Rename* button at the bottom of the *Beacon* tab, and enter a new name. To delete a profile, tap the *Delete station and all data* button at the bottom of the *Beacon* tab, and confirm the deletion.
+
+=== Packet path selection
+
+When transmitting beacons to RF using a TNC and a radio, a suitable packet path should be selected. The packet path selects the amount and type of digipeaters which are requested to retransmit the packet.
+
+The default of *WIDE1-1,WIDE2-1*, which requests two digipeater hops, is suitable for most cases, but you may wish to change it to meet local network requirements.
+
+A *TRACE2-2* path requests two digipeater hops, where the digipeaters should insert their own callsigns into the packet. This is useful for tracing the route of the packet through the network.
+
+The *ARISS* path is used when transmitting via the ISS (International Space Station) digipeater and other APRS satellites.
+
+An empty path will not request any digipeaters, and the packet will only be transmitted by your own station. This is useful for testing, or when you wish to transmit a position without any digipeater retransmissions.
+
+==== Custom paths
+
+Custom paths may be set up using the *+* button in the bottom of the packet path selection view. You can enter a custom path with any valid APRS digipeater aliases or callsigns of specific digipeaters.
+
+Custom paths will be stored and can be easily selected later on in the same view.
+
+=== Beacon timing
+
+The aprs.fi app implements a smart beacon timing algorithm which adjusts the transmit interval based on your speed and movement. It will transmit more often when you are moving faster, and less often when you are not moving. It will also detect tight turns and send a new position as soon as possible. This helps to save battery power and reduces the amount of data sent over the network.
+
+Increasing *minimum transmit interval* will reduce the frequency of transmitted beacons.  If you wish to transmit a less exact position for for privacy reasons, you can increase the minimum interval and enable *position ambiguity* to further reduce position accuracy.
+
+Decreasing *maximum transmit interval* will increase the frequency of transmitted beacons while you are not moving.
+
+If the minimum and maximum interval are set to the same value, the smart beacon algorithm will not be used.
 
 === Beaconing via APRS-IS
 
@@ -140,11 +189,18 @@ After a TNC is set up, enable *Beacon via TNC* in the *Beacon* tab.
 
 Data transmitted on amateur radio frequencies is not private, and will typically be received by iGate stations which forward the data to the APRS-IS.
 
+=== Beaconing in the background
+
+The app will continue to transmit your position in the background, if it is allowed by iOS privacy settings.  For the app to be able to transmit in the background, you need to enable background location updates (aprs.fi More -> Settings -> Privacy -> Location).
+
+The `ALLOW LOCATION ACCESS` setting should be set to `Always`. If you select `While Using the App`, the app will only transmit your position when it is in the foreground and the screen is not locked.
+
 === Deleting uploaded position history
 
 If you wish to delete the position history uploaded to aprs.fi, go to the *Beacon* tab, scroll down to the bottom, and tap the *Delete station and all data* button. This will delete all positions uploaded by the app from the aprs.fi service.
 
 If you have transmitted data via the APRS-IS or using a TNC, it will be likely archived by other services, and may still be available for download or viewing.
+
 
 == Messaging
 
@@ -158,17 +214,49 @@ To send a message, simply enter the text in the message input field and tap the 
 
 The message can be sent either via APRS-IS (Network) or via a TNC connection. The transmission method is selected using the *Transmit using* button in the bottom of the message thread. If you have a TNC set up, you can select it to transmit the message via the radio. Otherwise, select *Network* and the message will be sent via the APRS-IS network. If *Automatic* is selected, the app will automatically select the best transmission method available and try both if necessary.
 
+=== Messaging privacy
+
+There is no privacy in APRS messaging. Messages sent via the APRS-IS network are public, and anyone can read and archive them. Messages sent via a TNC are transmitted on the radio frequencies, and can be received by anyone with a radio receiver.
+
 === Push notifications for new messages
 
 The aprs.fi backend service will send push notifications for new messages to the app. To receive push notifications, you need to have them enabled in the iOS Settings app. When first using messaging, the app will ask you to allow notifications. If you accidentally denied notifications, you can enable them again in *iOS Settings* -> *aprs.fi* -> *Privacy* -> *Notifications*.
 
 === Message retransmissions and acknowledgement
 
+The app will transmit each message up to 6 times, with an increasing delay between each transmission. This is to ensure that the message is delivered even if the first transmission fails due to poor radio conditions or other issues.
+
+When the recipient's APRS software receives the message, it will send an acknowledgement (ACK) back to the sender. The message will be marked as delivered, and further retransmissions will be stopped.
+
+If you wish to resend a message, keep your finger for a moment on the message in the message thread, and select *Retransmit* from the menu. This will initiate a new sequence of retransmissions.
+
+It is also possible to abort the retransmissions of a message by keeping your finger on the message in the message thread, and selecting *Abort*.
+
 === APRS messaging reliability
+
+The APRS messaging system does not have high reliability. For a message to be delivered to a recipient on the RF network, the recipient must be within range of a transmit-capable (TX) iGate gateway station, or a digipeater near such a gateway.
+
+Unfortunately many APRS iGates are receive-only (RX) and do not transmit packets, due to licensing issues or hardware limitations. Receivers are cheap, transceivers are more expensive, and in many countries an automatic transmitting station requires a special license. In such cases messaging may only work to one direction - from RF to APRS-IS, but not back to RF.
+
+When you're transmitting packets from RF to the APRS-IS via a receive-only iGate, the acknowledgement packet will not be transmitted back to RF. The app will not know that the message was received, and will keep retransmitting it until the maximum number of retransmissions is reached.
 
 === Searching for conversations
 
-=== Mass deletion of received messages
+In the message threads view, you can search for conversations by entering a search term in the search field at the top of the view. The search will match against the recipient callsign and the full text of the latest message.
+
+=== Deleting messages
+
+Individual messages can be deleted by keeping your finger on the message in the message thread, and selecting *Delete* from the menu.
+
+A message thread can be deleted by swiping left on the thread in the message list, and tapping the *Delete* button. Alternatively, swipe the thread all the way to the left and it will be deleted with a single movement. Be careful, there is no confirmation dialog or undo for this action!
+
+This will delete all messages in the thread and the thread itself. The messages will only be deleted from the app on this device.
+
+==== Mass deletion of messages
+
+To delete many threads at once, tap the *Edit* button in the top left corner of the message threads view. This will enable the edit mode, where you can select multiple threads to delete. Tap the *Delete* button in the bottom right corner to delete all selected threads.
+
+To delete all threads containing a specific word or phrase, enter the search term in the search field at the top of the message threads view, then tap the *Select all* button in the bottom left corner, and the *Delete* button in the bottom right. This will delete all threads matching the search term. This is useful for deleting all *APRS Thursday* messages, which contain the word *HOTG*.
 
 == Connecting to a radio
 
@@ -194,6 +282,12 @@ Most current BLE TNCs only support a single connection at a time. If you are als
 * VGC VR N76, Radioddity GA-5WB, BTECH UV-PRO radios contain a built-in BLE TNC. They are essentially the same device, with different branding.
 
 Notably, none of the current Kenwood APRS radios support BLE KISS. The *B.B. Link Adapter* can act as a bridge between the classic Bluetooth TH-D74/D75 radios and BLE, allowing the app to connect to the radio.
+
+[BLEin the background]
+====
+When a BLE TNC is connected, iOS allows the app to receive APRS packets in the background. If Beacon is enabled, the app will also transmit APRS packets in the background. This is a valid background execution mode for iOS apps.
+====
+
 
 === Using the Software DSP modem
 
@@ -240,12 +334,74 @@ The new GPU hardware accelerated oscilloscope and waterfall views show the audio
 While the DSP modem is running, the app will continuously record and play back audio. This is a valid background execution mode for iOS apps, so the app will continue to receive and transmit APRS packets in the background.
 ====
 
-=== Using a hardware TNC via TCP/IP
+=== Using a TNC via TCP/IP
 
-The aprs.fi app can connect to KISS TNCs and software modems with a TCP KISS port over the network. If a TNC on the local Wi-Fi network supports mDNS (Bonjour), it will be automatically discovered and listed in the *Select a TNC* view. If not, you can add a TNC manually by entering its DNS hostname or IP address, and the TCP port. Using the manual method you can also connect to a remote TNC using a VPN connection.
+The aprs.fi app can connect to KISS TNCs and software modems with a TCP KISS port over the network. If a TNC on the local Wi-Fi network supports https://github.com/hessu/aprs-specs/blob/master/hamradio-zeroconfig.md[mDNS service discovery (Bonjour)], it will be automatically discovered and listed in the *Select a TNC* view. If not, you can add a TNC manually by entering its DNS hostname or IP address, and the TCP port. Using the manual method you can also connect to a remote TNC using a VPN connection.
 
 [TCP KISS in the background]
 ====
 iOS does not let apps maintain connections in the background, except for specific purposes such as VoIP. This means that the app will not stay connected to a TCP KISS TNC in the background.  It will reconnect automatically when the app is brought to the foreground again.
 ====
 
+
+== There's More
+
+=== Settings
+
+Application settings can be accessed from the *More* tab -> Settings. Settings are divided the following sections:
+
+* Privacy – iOS privacy settings for the app
+* Map view:
+  * Default time range settings
+  * Disable display sleep: Off / In map view / When plugged in / Always
+  * Show road traffic
+  * And more...
+* Units and time:
+  * Measurement units and UTC time zone selection
+* Messages:
+  * Receive messages with all SSIDs: If enabled, the app will receive messages sent to all SSIDs of your currently-selected callsign.
+* aprs.fi Software Modem:
+  * KISS TNC parameters of the 1200 bit/s AFSK DSP modem
+* Helping to improve the service:
+  * Send usage statistics: Enable or disable sending metrics to the aprs.fi service. This is optional, but helps to improve the app and the service.
+
+
+=== iGate
+
+A basic receive-only iGate is available in the app. It will receive packets from a TNC, and upload them to the APRS-IS via the aprs.fi backend. The iGate currently does not transmit any packets, and it does not support digipeating.
+
+The iGate is enabled from the *More* tab -> iGate. The iGate will use the callsign-SSID selected in the *Beacon* tab.
+
+A table of recently heard stations can be accessed from the *iGate* tab. It shows the callsign, symbol, distance, and the time of the last heard packet for each station. When packets from a station are received via different paths, all the paths are displayed. The table is also maintained when the iGate is disabled.
+
+
+=== My account
+
+This is where you can log in to your aprs.fi user account, or create a new one. Logging in is necessary for messaging, beaconing your position, and sychronizing your favourites and settings with the aprs.fi service.
+
+You may also change the main callsign attached to the account here, using the *Change* button.
+
+If you have multiple callsigns, you can set up multiple station profiles in the *Beacon* tab, each with a different callsign, SSID and settings. The callsign-SSID selected in the *Beacon* tab is used for beaconing and messaging. The callsign-SSID of each profile can be changed with the *Rename* button in the *Beacon* tab.
+
+
+=== Subscription
+
+A subscription is required to use the Extra Features of the app. The subscription can be purchased from the *Subscription* tab in the *More* tab. The subscription model is used to ensure funding for the continued development and maintenance of the app and the aprs.fi service.
+
+The subscription is available as a monthly or yearly plan. The yearly plan is cheaper than the monthly plan, and it is recommended for long-term users.
+
+Subscriptions are managed by Apple, and can be cancelled at any time. If you cancel your subscription, you will still have access to the Extra Features until the end of the current billing period. Cancellation must be done at least 24 hours before the renewal date to avoid being charged for the next period.
+
+The yearly subscription, as well as the application itself, can be shared with family members using *Family Sharing*.
+
+=== Refunds
+
+If you have purchased the app or subscription accidentally, or you are not satisfied with it, you can https://support.apple.com/en-us/118223[request a refund from Apple].
+
+Please note that refunds are handled by Apple, and the aprs.fi developer cannot issue refunds directly. All sales and payments happen via Apple, and the aprs.fi team does not have access to your payment information.
+
+=== Feedback and support
+
+If you have any questions, feedback, or issues with the app, please contact the developer either via the *More* tab -> *Feedback* -> Send feedback over email.  The application is developed by a single developer, and he will do his best to answer your questions, but sometimes it may take some time to respond. Please be patient!
+
+You can also send a message to the https://groups.google.com/g/aprsfi[aprs.fi discussion group] where many users and APRS developers are active. The group is a good place to ask questions and report issues, but please note that it is specific to the aprs.fi web site and the iOS app, and not a general APRS group. Messages about other APRS applications or services may be rejected.
