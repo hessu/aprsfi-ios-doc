@@ -1,0 +1,12 @@
+
+= aprs.fi iOS Frequently Asked Questions
+:toc:
+
+== Account and callsigns
+
+=== I have a new callsign, how do I change it?
+
+. Go to the *More -> My account* view, and tap *Change* to change the main callsign attached to your account.
+. Go to the *Beacon* view, scroll to the bottom, and tap *Rename*.
+. If you have multiple station profiles, switch to each profile by tapping the callsign in the *Beacon view* and rename each profile as needed.
+
