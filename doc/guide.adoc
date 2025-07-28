@@ -10,21 +10,13 @@ The aprs.fi app is a quick and mobile device friendly version of the familiar we
 
 === Mobile data usage
 
-The app requires a working Internet connection either through Wi-Fi or
-cellular data.  Your cell provider may charge you for transferred data.  The
-amount of data transferred by the aprs.fi app may be monitored from *iOS
-Settings* -> *Mobile Data*.  All data is compressed by aprs.fi before
-it is downloaded by the app.
+The app requires a working Internet connection either through Wi-Fi or cellular data.  Your cell provider may charge you for transferred data.  The amount of data transferred by the aprs.fi app may be monitored from *iOS Settings* -> *Mobile Data*.  All data is compressed by aprs.fi before it is downloaded by the app.
 
 === In-app payments
 
-Some of the new features of this app are available through an in-app subscription.
-All basic features that are currently available in the app, and some functions which
-are added later on, will naturally stay available without additional payment.
+Some of the new features of this app are available through an in-app subscription. All basic features that are currently available in the app, and some functions which are added later on, will naturally stay available without additional payment.
 
-In-app subscriptions provide a sustainable business model. They ensure continuous interest
-in developing and maintaining the application and its backend service even after all
-APRS-using iPhone and iPad owners have already purchased the app.
+In-app subscriptions provide a sustainable business model. They ensure continuous interest in developing and maintaining the application and its backend service even after all APRS-using iPhone and iPad owners have already purchased the app.
 
 Features currently included in the *Extra Features* subscription are:
 
@@ -124,16 +116,11 @@ Favourite stations are synchronised with the aprs.fi service, so they are availa
 
 == Beaconing your position
 
-To publish your position on aprs.fi, please log in using your aprs.fi user
-account.  If you do not have an account yet, you may sign up for the
-free user account.  Note that the password is not the same as your APRS-IS passcode.
+To publish your position on aprs.fi, please log in using your aprs.fi user account.  If you do not have an account yet, you may sign up for the free user account.  Note that the password is not the same as your APRS-IS passcode.
 
-Please note that the positions will by default only be uploaded to aprs.fi. They will
-not appear on the APRS-IS or other APRS applications. Beaconing
-to APRS-IS can be enabled with a switch while the Extra Features subscription is active.
+Please note that the positions will by default only be uploaded to aprs.fi. They will not appear on the APRS-IS or other APRS applications. Beaconing to APRS-IS can be enabled with a switch while the Extra Features subscription is active.
 
-Transmitting positions on the APRS-IS requires an amateur radio license and
-valid callsign.
+Transmitting positions on the APRS-IS requires an amateur radio license and valid callsign.
 
 === Beacon profiles
 
@@ -352,18 +339,18 @@ Application settings can be accessed from the *More* tab -> Settings. Settings a
 
 * Privacy – iOS privacy settings for the app
 * Map view:
-  * Default time range settings
-  * Disable display sleep: Off / In map view / When plugged in / Always
-  * Show road traffic
-  * And more...
+** Default time range settings
+** Disable display sleep: Off / In map view / When plugged in / Always
+** Show road traffic
+** And more...
 * Units and time:
-  * Measurement units and UTC time zone selection
+* Measurement units and UTC time zone selection
 * Messages:
-  * Receive messages with all SSIDs: If enabled, the app will receive messages sent to all SSIDs of your currently-selected callsign.
+** Receive messages with all SSIDs: If enabled, the app will receive messages sent to all SSIDs of your currently-selected callsign.
 * aprs.fi Software Modem:
-  * KISS TNC parameters of the 1200 bit/s AFSK DSP modem
+** KISS TNC parameters of the 1200 bit/s AFSK DSP modem
 * Helping to improve the service:
-  * Send usage statistics: Enable or disable sending metrics to the aprs.fi service. This is optional, but helps to improve the app and the service.
+** Send usage statistics: Enable or disable sending metrics to the aprs.fi service. This is optional, but helps to improve the app and the service.
 
 
 === iGate
@@ -404,4 +391,6 @@ Please note that refunds are handled by Apple, and the aprs.fi developer cannot 
 
 If you have any questions, feedback, or issues with the app, please contact the developer either via the *More* tab -> *Feedback* -> Send feedback over email.  The application is developed by a single developer, and he will do his best to answer your questions, but sometimes it may take some time to respond. Please be patient!
 
-You can also send a message to the https://groups.google.com/g/aprsfi[aprs.fi discussion group] where many users and APRS developers are active. The group is a good place to ask questions and report issues, but please note that it is specific to the aprs.fi web site and the iOS app, and not a general APRS group. Messages about other APRS applications or services may be rejected.
+You can also send a message to the https://groups.google.com/g/aprsfi[aprs.fi discussion group] where many users and APRS developers are active.
+
+The group is a good place to ask questions and report issues, but please note that it is specific to the aprs.fi web site and the iOS app, and not a general APRS group. Messages about other APRS applications or services may be rejected. Messages from new users are moderated, so they will not appear immediately.
