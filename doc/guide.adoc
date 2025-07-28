@@ -295,27 +295,46 @@ When a BLE TNC is connected, iOS allows the app to receive APRS packets in the b
 
 The app contains a high-performance software modem which allows you to connect a transceiver directly to the headphone/microphone connector of an iPhone or iPad. The DSP modem is available when an Extra Features subscription is active.
 
-A BTECH APRS-K1 cable for connecting to a radio is recommended. New devices without a 3.5mm earphone connector additionally require a Lightning or USB-C adapter.
+The https://digirig.net/[digirig] *VOX PTT Cable for Smartphones* is recommended for connecting the iOS device to a radio. It has a 3.5mm TRRS connector for the iPhone headphone output, and another 3.5mm TRRS connector for a radio-specific cable. The *VOX PTT Cable* contains a simple hardware VOX circuit which detects audio from the iPhone and keys the radio's PTT line. The transmitter is keyed very rapidly for the duration of the data transmission, and the delay issues of regular VOX are avoided.
+
+Alternatively, a *BTECH APRS-K1* cable can be used, but it requires enabling VOX on the radio.
+
+New devices without a 3.5mm earphone connector additionally require a Lightning or USB-C adapter.
 
 In a pinch, placing the microphone next to the speaker of a receiver on the APRS frequency may also work for testing.
 
 ==== Receive audio level adjustment
 
-Adjust the volume of your receiver so that the oscilloscope view shows a nice waveform which does not touch the red edges of the scope. Fairly low volumes work just fine, but overdriving with a too high level will give poor performance.
+Adjust the volume of your receiver so that the oscilloscope view shows a nice waveform which does not touch the red edges of the scope, when the squelch is open. The setting is not critical, as long as the level is not too high, causing distortion. Fairly low volumes work fine!
 
 ==== Transmit audio level adjustment
 
 Adjust the transmit audio level using the normal volume controls of the iOS device while the transceiver is connected. The device will remember a separate audio level setting for the headphone output.
 
-Use a separate receiver to monitor the transmitted audio. The transmitted audio should be a clean sine wave with no distortion. If the audio is distorted, reduce the transmit audio level until it is clean. For a rough adjustment compare the transmitted audio to other APRS stations on the air. If your audio sounds similar to other stations, it is likely OK. For best results use a service monitor or a spectrum analyzer to check the FM deviation.
+Use a separate receiver to monitor the transmitted audio. Transmit audio should be a clean sine wave with no distortion. If the audio is distorted, reduce the transmit audio level until it is clean. For a rough adjustment compare the transmitted audio to other APRS stations on the air. If your audio sounds similar to other stations, it is likely OK. For best results use a service monitor or a spectrum analyzer to check the FM deviation.
+
+When using a hardware VOX PTT cable, the transmit audio level should be set so that the radio transmits. A fairly high volume setting may be required to drive the PTT circuit, but the cable may also have a built-in audio level attenuator to prevent overdriving the radio.
 
 ==== PTT control and VOX
 
-There is no PTT line on the iPhone, and custom USB devices are not accessible from iOS apps, so the app uses VOX (Voice Operated Transmit) to control the transmitter. This means that the radio will start transmitting when it detects audio coming from the app, and stop transmitting when the audio stops.
+There is no PTT line on the iPhone, and custom USB devices are not accessible from iOS apps, so the app needs to use VOX (Voice Operated Transmit) to control the transmitter. This means that the radio will start transmitting when it detects audio coming from the app, and stop transmitting when the audio stops.
 
-VOX is not ideal for data. The radio will start transmitting slowly, because VOX is designed to not transmit from short noise bursts. It will key the transmitter for a long time after the audio stops, keeping the channel busy.
+[VOX is not great for data]
+====
+VOX is not ideal for data. The VOX built in most radios will start transmitting slowly because VOX is designed to not transmit from short noise bursts. It requires using a long TXDELAY setting in the TNC, so that the transmit keys before actual packet data is transmitted.
+
+It will also key the transmitter for a long time after the audio stops, keeping the channel busy. During this time a quiet carrier will be transmitted, which may interfere with other stations trying to use the channel. Other stations may use DCD (Data Carrier Detect) to detect a carrier, which may not detect the quiet carrier. They may transmit on top of your tail, causing interference.
+
+A hardware VOX PTT cable has no such delay issues.
+====
 
 Configuration tips for VOX operation:
+
+* TX delay (aprs.fi Settings): A time delay introduced before transmitting packet data, during which special flag bytes are transmitted. It allows the transmitter to key and stabilize, and the receivers to open squelch and synchronise to the incoming data stream.
++
+When using VOX of a radio, set it to a long value, such as 50 (500 ms). Then lower it gradually in steps of 10 (100 ms) while checking that other stations can still decode your packets reliably.
++
+When using a hardware VOX PTT cable, the TX delay can be set to a shorter value, such as 20 (200 ms), as the transmitter will key up quickly.
 
 * VOX delay: Shortest available setting
 * VOX gain / sensitivity / level: Set so that the radio only starts transmitting when the app plays back audio.
