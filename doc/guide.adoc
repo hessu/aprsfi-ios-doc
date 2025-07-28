@@ -1,6 +1,7 @@
 
 = aprs.fi iOS User Guide
 :toc:
+:imagesdir: ./img/
 
 Welcome to the aprs.fi iOS app! I thank you for your purchase, it'll help me to keep the service running.  This guide will get you started.
 
@@ -35,8 +36,12 @@ To track a specific station, search for it on the *Search* tab, and select a sta
 
 To stop tracking a station, drag the station's callsign button and drop it to the left side. Alternatively, tap *Stop tracking* in the *station details* view.
 
+image::map-fit-stations1@2x.png[Fit stations,32,32,float="right",align="center"]
+When tracking multiple stations, this button will fit all tracked stations into the map view.
+
 === Navigating on the map
 
+image::map-center-device1@2x.png[Center,32,32,float="right",align="center"]
 To center on your current location, tap the centering button in the lower right corner of the map. Tap again to zoom in.
 
 To center on a currently tracked station, tap the respective callsign button in the lower right corner. Tap again to zoom in. While tracking multiple stations, an additional button is shown for quickly fitting all tracked stations in the view.
@@ -45,16 +50,20 @@ If you zoom out far enough, the amount of data presented may be a little bit too
 
 === Map time range
 
+image::map-timerange1@2x.png[Time range,32,32,float="right",align="center"]
 To change the time range of the map, tap the *Time range* button in the bottom of the map view. The time range selects how far back in time the stations are shown on the map.
 
 The default time range is 1 hour, but you can select from a number of predefined ranges.
 
 === Filters
 
+image::map-filter1@2x.png[Filter,32,32,float="right",align="center"]
 To filter the stations shown on the map, tap the *Filter* (funnel) button in the bottom of the map view. A few default filters are set up as an example and can be simply enabled and disabled. Filters are not applied when tracking specific stations.
 
 The filter chain has two sections: *Display these* and *But not these*. If one of the enabled filters in the *Display these* section matches a station, it will be shown on the map. If nothing matches the filters, no stations will be shown – enable the "All stations" filter to show all stations again.
 
+image::button-filter-up1@2x.png[Filter up,32,32,float="right",align="center"]
+image::button-filter-down1@2x.png[Filter up,32,32,float="right",align="center"]
 The *But not these* section contains the filters that will hide stations which would otherwise be shown by the previous filters. It can be used to create exceptions. Press the red and blue up/down buttons on the right to move filters between the two sections.
 
 Each of the filters in the chain can be enabled and disabled independently with the toggle switch on the left.
@@ -78,10 +87,12 @@ A single filter can compare for multiple criteria. For example, you may wish to 
 
 === Map symbol and text size
 
+image::map-symbol-size1@2x.png[Symbol size,32,32,float="right",align="center"]
 To change the station symbol size and the text size on the map, repeatedly press the scale button on the bottom of the map.  This cycles through the three available sizes.
 
 === Map style
 
+image::map-type1@2x.png[Map type,32,32,float="right",align="center"]
 To change between navigation and satellite map styles, tap the *Map style* button in the bottom of the map view.
 
 The *Navigation* style is a standard map with streets and place names, while the *Satellite* style shows satellite imagery.  The third option is *Hybrid*, which combines the two styles, showing streets and place names on top of the satellite imagery.
@@ -105,10 +116,12 @@ Manual termination of apps is normally not necessary, as iOS will automatically 
 
 Pull the information table down to refresh the information. It will be refreshed periodically, too.
 
+image::info-show-graphs@2x.png[Show graphs,32,32,float="right",align="center"]
 Additional graphs can be drawn for many stations. On an iPhone, the graphs can be accessed using the graphs button in the top right corner, or by swiping.
 
 === Favourite stations
 
+image::button-favourite@2x.png[Favourite,32,32,float="right",align="center"]
 You can add stations to your favourites by tapping the *Star* button in the *station details* view. Favourites are shown in the *Favourites* tab in *Search*, and can be tracked from there. On the iPad, starting from iOS 18, the search text entry field needs to be activated to view the search scope tabs (Stations, Favourites, Addresses).
 
 Favourite stations are synchronised with the aprs.fi service, so they are available on all your devices. You can also access your favourites on the web site using the *Star* button on the right side of the map view.
@@ -272,7 +285,7 @@ Notably, none of the current Kenwood APRS radios support BLE KISS. The *B.B. Lin
 
 [BLEin the background]
 ====
-When a BLE TNC is connected, iOS allows the app to receive APRS packets in the background. If Beacon is enabled, the app will also transmit APRS packets in the background. This is a valid background execution mode for iOS apps.
+When a BLE TNC is connected, iOS allows the app to receive APRS packets in the background. If Beacon is enabled, the app will also transmit position reports in the background. This is a valid background execution mode for iOS apps.
 ====
 
 
