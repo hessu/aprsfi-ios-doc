@@ -141,7 +141,7 @@ You may set up multiple APRS station profiles in the app, each with different sy
 
 To set up a new profile in the *Beacon* tab, tap the current station callsign to view the list of profiles.  Tap the *New station* button, and enter the callsign, SSID (Secondary System Identifier), and other settings for the new profile.
 
-The SSID is a number between 1 and 15, appended to the callsign with a hyphen, e.g. `OH7RDA-1`. The SSID is optional, but it is needed to distinguish between different stations and devices of a single user. The SSID if 0 is, by convention, reserved for the main station, and not shown.
+The SSID is a number between 1 and 15, appended to the callsign with a hyphen, e.g. `N0CALL-1`. The SSID is optional, but it is needed to distinguish between different stations and devices of a single user. The SSID if 0 is, by convention, reserved for the main station, and not shown.
 
 Non-numeric SSIDs of one or two characters are allowed, but they cannot be used when beaconing to APRS-IS, or when using a TNC.
 
@@ -206,9 +206,11 @@ If you have transmitted data via the APRS-IS or using a TNC, it will be likely a
 
 The aprs.fi app supports sending and receiving APRS text messages. The feature is included in the *Extra Features* subscription.
 
-To start a converstaion, tap the *Messages* tab, and then tap the *New message* button in the top right corner. Enter the destination callsign, with the correct SSID (Secondary System Identifier) if necessary, and press the *Send* button to open up a new message thread.
+For messaging to work, a valid callsign-SSID must first be set up in the *Beacon* tab, as it will also be used for messaging. The callsign-SSID pair must be valid for use in the AX.25 packet radio protocol. The callsign must be a valid amateur radio callsign, not longer than 6 characters. The SSID number (1-15) is optional, but it is needed to distinguish between different devices of the same user. Examples: `N0CALL`, `N0CALL-5`, `OH7RDA-15`.
 
-Alternatively, you can tap the *Messages* button in the *station details* view of a station to start a new message thread with that station. On the iPhone, the *Messages* view can be accessed via the *More* button on the top of the station view.
+To start a conversation, tap the *Messages* tab, and then tap the *New message* (letter) button in the top right corner. Enter the destination callsign, with the correct SSID (Secondary System Identifier) if necessary, and press the *Send* button to open up a new message thread.
+
+Alternatively, start a new message thread directly from a *station details* view. On the iPhone, the *Messages* view can be accessed via the *More* button on the top of the station view. On the iPad, a *Messages* (letter) button is available.
 
 To send a message, simply enter the text in the message input field and tap the *Send* button. Transmitted and received messages are shown in the message thread, just like in any other messaging app.
 
@@ -356,14 +358,12 @@ Application settings can be accessed from the *More* tab -> Settings. Settings a
 ** Disable display sleep: Off / In map view / When plugged in / Always
 ** Show road traffic
 ** And more...
-* Units and time:
-* Measurement units and UTC time zone selection
+* Units and time: Measurement units and UTC time zone selection
 * Messages:
 ** Receive messages with all SSIDs: If enabled, the app will receive messages sent to all SSIDs of your currently-selected callsign.
 * aprs.fi Software Modem:
 ** KISS TNC parameters of the 1200 bit/s AFSK DSP modem
-* Helping to improve the service:
-** Send usage statistics: Enable or disable sending metrics to the aprs.fi service. This is optional, but helps to improve the app and the service.
+* Send usage statistics: Enable or disable sending metrics to the aprs.fi service. This is optional, but helps to improve the app and the service.
 
 
 === iGate
@@ -402,7 +402,7 @@ Please note that refunds are handled by Apple, and the aprs.fi developer cannot 
 
 === Feedback and support
 
-If you have any questions, feedback, or issues with the app, please contact the developer either via the *More* tab -> *Feedback* -> Send feedback over email.  The application is developed by a single developer, and he will do his best to answer your questions, but sometimes it may take some time to respond. Please be patient!
+If you have any questions, feedback, or issues with the app, please contact the developer via *More* tab -> *Feedback* -> *Send feedback over email*.  The application is developed by a single developer, and he will do his best to answer your questions, but sometimes it may take some time to respond. Please be patient!
 
 You can also send a message to the https://groups.google.com/g/aprsfi[aprs.fi discussion group] where many users and APRS developers are active.
 
