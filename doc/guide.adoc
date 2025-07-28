@@ -1,0 +1,251 @@
+
+= aprs.fi iOS User Guide
+:toc:
+
+Welcome to the aprs.fi iOS app! I thank you for your purchase, it'll help me
+to keep the service running.  This brief guide will get you started.
+
+The aprs.fi app is a quick and mobile device friendly version of the
+familiar web service.  It downloads current APRS information directly from
+the aprs.fi service and displays it instantly.  The same app works great on
+all current iPhones and iPads.
+
+== Before we start
+
+=== Mobile data usage
+
+The app requires a working Internet connection either through Wi-Fi or
+cellular data.  Your cell provider may charge you for transferred data.  The
+amount of data transferred by the aprs.fi app may be monitored from *iOS
+Settings* -> *Mobile Data*.  All data is compressed by aprs.fi before
+it is downloaded by the app.
+
+=== In-app payments
+
+Some of the new features of this app are available through an in-app subscription.
+All basic features that are currently available in the app, and some functions which
+are added later on, will naturally stay available without additional payment.
+
+In-app subscriptions provide a sustainable business model. They ensure continuous interest
+in developing and maintaining the application and its backend service even after all
+APRS-using iPhone and iPad owners have already purchased the app.
+
+Features currently included in the *Extra Features* subscription are:
+
+* Text messaging
+* Beaconing to APRS-IS
+* "Soundcard" DSP modem / TNC
+* Long time ranges on map and graph views
+* Up to 10 station profiles in Beacon
+
+
+== Basic usage
+
+=== Tracking stations on the map
+
+To track a specific station, search for it on the *Search* tab, and select a station to enter the *station details* view. Tap the *Track* button to start tracking. To track multiple stations at a time, search for additional stations and tap *Track* again.
+
+To stop tracking a station, drag the station's callsign button and drop it to the left side. Alternatively, tap *Stop tracking* in the *station details* view.
+
+=== Navigating on the map
+
+To center on your current location, tap the centering button in the lower right corner of the map. Tap again to zoom in.
+
+To center on a currently tracked station, tap the respective callsign button in the lower right corner. Tap again to zoom in. While tracking multiple stations, an additional button is shown for quickly fitting all tracked stations in the view.
+
+If you zoom out far enough, the amount of data presented may be a little bit too much for the device, and updates will be paused. Zoom in to refresh again.
+
+=== Filters
+
+To filter the stations shown on the map, tap the *Filter* (funnel) button in the bottom of the map view. A few default filters are set up as an example and can be simply enabled and disabled. Filters are not applied when tracking specific stations.
+
+The filter chain has two sections: *Display these* and *But not these*. The *Display these* section contains the filters that must match for a station to be shown on the map. If nothing matches the filters, no stations will be shown – enable the "All stations" filter to show all stations again.
+
+The *But not these* section contains the filters that will hide stations which would otherwise be shown by the previous filters. It can be used to create exceptions. Press the red and blue up/down buttons on the right to move filters between the two sections.
+
+Press the *+* button to add a custom filter. You can set up filters for any combination of the following criteria:
+
+* Data source (network / TNC), when a TNC is set up
+* Station class / data source (APRS, AIS, web)
+* Speed
+* Altitude
+* Symbol
+* APRS Station type: Location, Item, Object, Weather
+* Digipeater / iGate detection
+* Station/object name/callsign (with wildcards)
+* Source callsign (with wildcards)
+* Destination callsign (with wildcareds)
+* Packet path (with wildcards)
+* APRS device vendor and model (with wildcards)
+
+A single filter can compare for multiple criteria. For example, you may wish to show all stations with a specific symbol, but only those which are moving faster than 10 km/h. Press the *+* button to add comparison, and press *OK* when the filter is ready.
+
+=== The app remembers your last view
+
+The application stores the last view and map settings, so the next time you open the app, it will show the same view as you left it. It will even remember them if you power off the iPhone and turn it back on later.
+
+However, if you manually terminate the app, iOS will delete the state restoration file. This may be useful if the app is misbehaving and you want to reset it.
+
+=== If nothing is shown on the map
+
+* If you are tracking a specific station, its callsign is shown in the lower right corner. Tap it to center on the station, or drag it to the left side to stop tracking and show all stations again.
+* Check filters. Tap the *Filter* (funnel) button in the bottom of the map view, and check if any filters are enabled. Make sure the "All stations" and "From network" filters are enabled.
+
+=== Station details view
+
+Pull the information table down to refresh the information. It will be refreshed periodically, too.
+
+Additional graphs can be drawn for many stations. On an iPhone, the graphs can be accessed using the graphs button in the top right corner, or by swiping.
+
+=== Favourite stations
+
+
+== Beaconing your position
+
+To publish your position on aprs.fi, please log in using your aprs.fi user
+account.  If you do not have an account yet, you may sign up for the
+free user account.  Note that the password is not the same as your APRS-IS passcode.
+
+Please note that the positions will by default only be uploaded to aprs.fi. They will
+not appear on the APRS-IS or other APRS applications. Beaconing
+to APRS-IS can be enabled with a switch while the Extra Features subscription is active.
+
+Transmitting positions on the APRS-IS requires an amateur radio license and
+valid callsign.
+
+You may set up multiple APRS station profiles in the app, each with different
+symbol and other settings, allowing quick switching between the stations.
+
+Increasing *minimum transmit interval* will reduce the frequency of
+transmitted beacons.  If you wish to transmit a less exact position for
+for privacy reasons, you can increase the minimum interval and enable
+*position ambiguity* to further reduce position accuracy.
+
+Decreasing *maximum transmit interval* will increase the frequency
+of transmitted beacons while you are not moving.
+
+If the minimum and maximum interval are not set to the same value, a dynamic algorithm to schedule transmissions is used. Beacons are sent more often when moving faster, or when tight turns are detected. When you're not moving, a beacon will be sent out every *maximum interval*.
+
+=== Beaconing via APRS-IS
+
+APRS-IS beaconing is available with the Extra Features subscription. To enable APRS-IS beaconing, go to the *Beacon* tab, enable *Beacon via APRS-IS*.
+
+Note that the APRS-IS is a public network, and your position will be visible to anyone. There is no privacy. Data sent to the APRS-IS is archived by a number of services, and will be available for download or viewing even after you stop transmitting.
+
+=== Beaconing via TNC
+
+To transmit your position via a TNC, you need to set up a TNC connection. See the section on connecting to a radio below for details.
+
+After a TNC is set up, enable *Beacon via TNC* in the *Beacon* tab.
+
+Data transmitted on amateur radio frequencies is not private, and will typically be received by iGate stations which forward the data to the APRS-IS.
+
+=== Deleting uploaded position history
+
+If you wish to delete the position history uploaded to aprs.fi, go to the *Beacon* tab, scroll down to the bottom, and tap the *Delete station and all data* button. This will delete all positions uploaded by the app from the aprs.fi service.
+
+If you have transmitted data via the APRS-IS or using a TNC, it will be likely archived by other services, and may still be available for download or viewing.
+
+== Messaging
+
+The aprs.fi app supports sending and receiving APRS text messages. The feature is included in the *Extra Features* subscription.
+
+To start a converstaion, tap the *Messages* tab, and then tap the *New message* button in the top right corner. Enter the destination callsign, with the correct SSID (Secondary System Identifier) if necessary, and press the *Send* button to open up a new message thread.
+
+Alternatively, you can tap the *Messages* button in the *station details* view of a station to start a new message thread with that station. On the iPhone, the *Messages* view can be accessed via the *More* button on the top of the station view.
+
+To send a message, simply enter the text in the message input field and tap the *Send* button. Transmitted and received messages are shown in the message thread, just like in any other messaging app.
+
+The message can be sent either via APRS-IS (Network) or via a TNC connection. The transmission method is selected using the *Transmit using* button in the bottom of the message thread. If you have a TNC set up, you can select it to transmit the message via the radio. Otherwise, select *Network* and the message will be sent via the APRS-IS network. If *Automatic* is selected, the app will automatically select the best transmission method available and try both if necessary.
+
+=== Push notifications for new messages
+
+The aprs.fi backend service will send push notifications for new messages to the app. To receive push notifications, you need to have them enabled in the iOS Settings app. When first using messaging, the app will ask you to allow notifications. If you accidentally denied notifications, you can enable them again in *iOS Settings* -> *aprs.fi* -> *Privacy* -> *Notifications*.
+
+=== Message retransmissions and acknowledgement
+
+=== APRS messaging reliability
+
+=== Searching for conversations
+
+=== Mass deletion of received messages
+
+== Connecting to a radio
+
+The aprs.fi app supports multiple methods for connecting to a radio or TNC (Terminal Node Controller) to transmit and receive APRS packets. The connection method depends on the hardware you have available.
+
+=== Using a BLE TNC or radio
+
+BLE (Bluetooth Low Energy) is a wireless technology for connecting devices with low power consumption. It is a part of Bluetooth 4.0 and later, and is supported by all iPhones and iPads. iPhone apps may connect to BLE devices, but they cannot communicate with classic Bluetooth devices. Many older Bluetooth-capable devices only support the classic Bluetooth Serial Port Profile (SPP) and are not accessible from iOS apps.
+
+The aprs.fi iOS app automatically detects and supports all TNCs which support the https://github.com/hessu/aprs-specs/blob/master/BLE-KISS-API.md[BLE KISS specification]. There is no need to add support for new radios or TNCs to the app, as long as they follow the BLE KISS specification. They just work, and they also work with a number of other apps following the common protocol.
+
+BLE devices are automatically discovered and listed in the *Select a TNC* view. If you have multiple BLE TNCs, you can select the one to use for the connection. BLE TNCs do not need to be paired with in iOS Settings. Just turn the BLE device on, enable BLE in the device if necessary, and pick it from the list. It feels like magic!
+
+Most current BLE TNCs only support a single connection at a time. If you are also using a separate configuration app for the device, you may need to disconnect the TNC from that app before you can connect to it with the aprs.fi app. Likewise, you may need to disconnect the TNC from within the aprs.fi app before you can use it with another app.
+
+*Here are some of the supported BLE devices:*
+
+* http://www.mobilinkd.com/[Mobilinkd] TNC3 and TNC4
+* http://www.db1nto.de/[PicoAPRS] v4 transceiver
+* https://www.rpc-electronics.com/[RPC Electronics] ESP32-APRS Tracker
+* https://github.com/richonguzman/LoRa_APRS_Tracker[CA2RXU LoRa APRS Tracker]
+* https://islandmagic.co/products/bb-link-adapter[Island Magic Co. B.B. Link Adapter] for Kenwood TH-D74/D75 radios
+* VGC VR N76, Radioddity GA-5WB, BTECH UV-PRO radios contain a built-in BLE TNC. They are essentially the same device, with different branding.
+
+Notably, none of the current Kenwood APRS radios support BLE KISS. The *B.B. Link Adapter* can act as a bridge between the classic Bluetooth TH-D74/D75 radios and BLE, allowing the app to connect to the radio.
+
+=== Using the Software DSP modem
+
+The app contains a high-performance software modem which allows you to connect a transceiver directly to the headphone/microphone connector of an iPhone or iPad. The DSP modem is available when an Extra Features subscription is active.
+
+A BTECH APRS-K1 cable for connecting to a radio is recommended. New devices without a 3.5mm earphone connector additionally require a Lightning or USB-C adapter.
+
+In a pinch, placing the microphone next to the speaker of a receiver on the APRS frequency may also work for testing.
+
+==== Receive audio level adjustment
+
+Adjust the volume of your receiver so that the oscilloscope view shows a nice waveform which does not touch the red edges of the scope. Fairly low volumes work just fine, but overdriving with a too high level will give poor performance.
+
+==== Transmit audio level adjustment
+
+Adjust the transmit audio level using the normal volume controls of the iOS device while the transceiver is connected. The device will remember a separate audio level setting for the headphone output.
+
+Use a separate receiver to monitor the transmitted audio. The transmitted audio should be a clean sine wave with no distortion. If the audio is distorted, reduce the transmit audio level until it is clean. For a rough adjustment compare the transmitted audio to other APRS stations on the air. If your audio sounds similar to other stations, it is likely OK. For best results use a service monitor or a spectrum analyzer to check the FM deviation.
+
+==== PTT control and VOX
+
+There is no PTT line on the iPhone, and custom USB devices are not accessible from iOS apps, so the app uses VOX (Voice Operated Transmit) to control the transmitter. This means that the radio will start transmitting when it detects audio coming from the app, and stop transmitting when the audio stops.
+
+VOX is not ideal for data. The radio will start transmitting slowly, because VOX is designed to not transmit from short noise bursts. It will key the transmitter for a long time after the audio stops, keeping the channel busy.
+
+Configuration tips for VOX operation:
+
+* VOX delay: Shortest available setting
+* VOX gain / sensitivity / level: Set so that the radio only starts transmitting when the app plays back audio.
+* Squelch: On many radios, squelch needs to be enabled for VOX to work, because received noise coming from the speaker would otherwise trigger the VOX. If the radio supports VOX while the squelch is open, it is recommended to leave squelch open for better receive performance. This may reduce battery life on handheld radios.
+* Power saving features will keep the receiver powered off for most of the time, and only enable it periodically to check for an incoming transmission. Enabling it will conserve battery power, but will cause packets to be missed, as the beginning of the short data burst will be cut off.
+
+==== Oscilloscope and Waterfall views
+
+The new GPU hardware accelerated oscilloscope and waterfall views show the audio signal in real time. The oscilloscope view shows the current audio waveform, while the waterfall view shows the audio spectrum over time.
+
+* Press the *OSC / WF* button to switch between the two views. The button may be disabled for some older devices which do not support the GPU accelerated waterfall.
+* Press the *T* button repeatedly to adjust the refresh time.
+* In the Oscilloscope view, press the *D* button repeatedly to adjust line decay time.
+
+
+[DSP modem in the background]
+====
+While the DSP modem is running, the app will continuously record and play back audio. This is a valid background execution mode for iOS apps, so the app will continue to receive and transmit APRS packets in the background.
+====
+
+=== Using a hardware TNC via TCP/IP
+
+The aprs.fi app can connect to KISS TNCs and software modems with a TCP KISS port over the network. If a TNC on the local Wi-Fi network supports mDNS (Bonjour), it will be automatically discovered and listed in the *Select a TNC* view. If not, you can add a TNC manually by entering its DNS hostname or IP address, and the TCP port. Using the manual method you can also connect to a remote TNC using a VPN connection.
+
+[TCP KISS in the background]
+====
+iOS does not let apps maintain connections in the background, except for specific purposes such as VoIP. This means that the app will not stay connected to a TCP KISS TNC in the background.  It will reconnect automatically when the app is brought to the foreground again.
+====
+

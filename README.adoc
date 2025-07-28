@@ -1,0 +1,10 @@
+
+= aprs.fi iPhone / iPad app documentation project
+
+This is the source code repository for the aprs.fi iOS app manual.
+
+== License
+
+aprs.fi iOS user guide © 1999 by Heikki Hannikainen is licensed under CC
+BY-SA 4.0.  To view a copy of this license, visit
+https://creativecommons.org/licenses/by-sa/4.0/
