@@ -305,6 +305,11 @@ New devices without a 3.5mm earphone connector additionally require a Lightning 
 
 In a pinch, placing the microphone next to the speaker of a receiver on the APRS frequency may also work for testing.
 
+[CAUTION]
+====
+Remember to silence all alerts on the iPhone when using VOX. Put it in the `Do Not Disturb` mode. Otherwise incoming calls and notifications will trigger VOX and key the transmitter. It sounds quite silly when you hear it on the air!
+====
+
 ==== Receive audio level adjustment
 
 Adjust the volume of your receiver so that the oscilloscope view shows a nice waveform which does not touch the red edges of the scope, when the squelch is open. The setting is not critical, as long as the level is not too high, causing distortion. Fairly low volumes work fine!
@@ -321,7 +326,7 @@ When using a hardware VOX PTT cable, the transmit audio level should be set so t
 
 There is no PTT line on the iPhone, and custom USB devices are not accessible from iOS apps, so the app needs to use VOX (Voice Operated Transmit) to control the transmitter. This means that the radio will start transmitting when it detects audio coming from the app, and stop transmitting when the audio stops.
 
-[VOX is not great for data]
+[NOTE]
 ====
 VOX is not ideal for data. The VOX built in most radios will start transmitting slowly because VOX is designed to not transmit from short noise bursts picked up by the microphone. It requires using a long TXDELAY setting in the TNC, so that the transmitter keys before actual packet data is transmitted.
 
@@ -352,7 +357,7 @@ The new GPU hardware accelerated oscilloscope and waterfall views show the audio
 * In the Oscilloscope view, press the *D* button repeatedly to adjust line decay time.
 
 
-[DSP modem in the background]
+[NOTE]
 ====
 While the DSP modem is running, the app will continuously record and play back audio. This is a valid background execution mode for iOS apps, so the app will continue to receive and transmit APRS packets in the background.
 ====
@@ -361,7 +366,7 @@ While the DSP modem is running, the app will continuously record and play back a
 
 The aprs.fi app can connect to KISS TNCs and software modems with a TCP KISS port over the network. If a TNC on the local Wi-Fi network supports https://github.com/hessu/aprs-specs/blob/master/hamradio-zeroconfig.md[mDNS service discovery (Bonjour)], it will be automatically discovered and listed in the *Select a TNC* view. If not, you can add a TNC manually by entering its DNS hostname or IP address, and the TCP port. Using the manual method you can also connect to a remote TNC using a VPN connection.
 
-[TCP KISS in the background]
+[NOTE]
 ====
 iOS does not let apps maintain connections in the background, except for specific purposes such as VoIP. This means that the app will not stay connected to a TCP KISS TNC in the background.  It will reconnect automatically when the app is brought to the foreground again.
 ====
