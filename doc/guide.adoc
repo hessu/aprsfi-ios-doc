@@ -34,9 +34,11 @@ Features currently included in the *Extra Features* subscription are:
 
 To track a specific station, search for it on the *Search* tab, and select a station to enter the *station details* view. Tap the *Track* button to start tracking. To track multiple stations at a time, search for additional stations and tap *Track* again.
 
-To stop tracking a station, drag the station's callsign button and drop it to the left side. Alternatively, tap *Stop tracking* in the *station details* view.
+To stop tracking a station, drag the station's callsign button and drop somewhere on the left, as shown in the following video. Alternatively, tap *Stop tracking* in the *station details* view.
 
-image::map-fit-stations1@2x.png[Fit stations,32,32,float="right",align="center"]
+video::aprsfi-guide-stop-tracking.mp4[width=300,opts="loop",align="center"]
+
+image::map-fit-stations1@2x.png[Fit stations,32,32,float="left",align="center"]
 When tracking multiple stations, this button will fit all tracked stations into the map view.
 
 === Navigating on the map
@@ -117,7 +119,7 @@ Manual termination of apps is normally not necessary, as iOS will automatically 
 Pull the information table down to refresh the information. It will be refreshed periodically, too.
 
 image::info-show-graphs@2x.png[Show graphs,32,32,float="right",align="center"]
-Additional graphs can be drawn for many stations. On an iPhone, the graphs can be accessed using the graphs button in the top right corner, or by swiping.
+Graphs of speed, altitude, weather and telemetry can be drawn for many stations. On an iPhone, the graphs can be accessed using the graphs button in the top right corner, or by swiping the details view to the left.
 
 === Favourite stations
 
@@ -321,7 +323,7 @@ There is no PTT line on the iPhone, and custom USB devices are not accessible fr
 
 [VOX is not great for data]
 ====
-VOX is not ideal for data. The VOX built in most radios will start transmitting slowly because VOX is designed to not transmit from short noise bursts. It requires using a long TXDELAY setting in the TNC, so that the transmit keys before actual packet data is transmitted.
+VOX is not ideal for data. The VOX built in most radios will start transmitting slowly because VOX is designed to not transmit from short noise bursts picked up by the microphone. It requires using a long TXDELAY setting in the TNC, so that the transmitter keys before actual packet data is transmitted.
 
 It will also key the transmitter for a long time after the audio stops, keeping the channel busy. During this time a quiet carrier will be transmitted, which may interfere with other stations trying to use the channel. Other stations may use DCD (Data Carrier Detect) to detect a carrier, which may not detect the quiet carrier. They may transmit on top of your tail, causing interference.
 
