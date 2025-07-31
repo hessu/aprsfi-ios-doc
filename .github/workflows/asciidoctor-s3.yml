@@ -12,10 +12,49 @@ jobs:
     steps:
     - name: Checkout code
       uses: actions/checkout@v2
+
+    - name: mkdir generated
+      run: |
+        mkdir generated
+
     - name: Get build container
       id: adocbuild
       uses: tonynv/asciidoctor-action@master
       with:
-          program: "asciidoctor -D doc --backend=html5 -o index.html doc/guide.adoc"
-    - name: Print execution time
-      run: echo "Time ${{ steps.adocbuild.outputs.time }}"
+          program: "asciidoctor -D doc --backend=html5 -o generated/index.html doc/guide.adoc"
+
+    - name: copy images
+      run: |
+        cp -a doc/img generated/img
+
+    - name: Archive artifacts
+      uses: actions/upload-artifact@v4
+      with:
+        name: aprsfi-ios-docs-release
+        path: |
+            generated
+
+  deploy:
+    name: Deploy
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@master
+
+      - name: Download artifacts
+        uses: actions/download-artifact@master
+        with:
+          name: aprs-ios-docs-release
+          path: build
+
+      - name: Sync artifacts with AWS S3
+        env:
+          AWS_S3_BUCKET: ${{ secrets.AWS_S3_BUCKET }}
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        run: |
+          aws s3 sync \
+            ./build "s3://$AWS_S3_BUCKET" \
+            --region eu-west-1
+
