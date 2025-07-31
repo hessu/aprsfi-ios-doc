@@ -1,0 +1,21 @@
+name: build adocs
+
+on:
+  push:
+    branches:
+    - main
+
+jobs:
+  adoc_build:
+    runs-on: ubuntu-latest
+    name: asciidoctor -D doc --backend=html5 -o index.html -a toc2 doc/guide.adoc
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+    - name: Get build container
+      id: adocbuild
+      uses: tonynv/asciidoctor-action@master
+      with:
+          program: "asciidoctor -D doc --backend=html5 -o index.html doc/guide.adoc"
+    - name: Print execution time
+      run: echo "Time ${{ steps.adocbuild.outputs.time }}"
