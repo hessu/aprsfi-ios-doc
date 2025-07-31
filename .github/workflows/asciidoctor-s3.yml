@@ -6,7 +6,7 @@ on:
     - main
 
 jobs:
-  adoc_build:
+  build:
     runs-on: ubuntu-latest
     name: asciidoctor -D doc --backend=html5 -o index.html -a toc2 doc/guide.adoc
     steps:
@@ -21,7 +21,7 @@ jobs:
       id: adocbuild
       uses: tonynv/asciidoctor-action@master
       with:
-          program: "asciidoctor -D doc --backend=html5 -o generated/index.html doc/guide.adoc"
+          program: "asciidoctor -D generated --backend=html5 -o index.html doc/guide.adoc"
 
     - name: copy images
       run: |
@@ -45,7 +45,7 @@ jobs:
       - name: Download artifacts
         uses: actions/download-artifact@master
         with:
-          name: aprs-ios-docs-release
+          name: aprsfi-ios-docs-release
           path: build
 
       - name: Sync artifacts with AWS S3
