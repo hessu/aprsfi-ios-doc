@@ -48,13 +48,13 @@ To stop tracking a station, drag the station's callsign button and drop somewher
 
 video::aprsfi-guide-stop-tracking.mp4[width=300,opts="loop",align="center"]
 
-image::map-fit-stations1@2x.png[Fit stations,32,32,float="left",align="center"]
-When tracking multiple stations, this button will fit all tracked stations into the map view.
+image::map-fit-stations1@2x.png[Fit stations,32,32,float="right",align="center"]
+When tracking multiple stations, the *Fit* button will fit all tracked stations into the map view.
 
 === Navigating on the map
 
 image::map-center-device1@2x.png[Center,32,32,float="right",align="center"]
-To center on your current location, tap the centering button in the lower right corner of the map. Tap again to zoom in.
+To center on your current location, tap the *Centering* button in the lower right corner of the map. Tap again to zoom in.
 
 To center on a currently tracked station, tap the respective callsign button in the lower right corner. Tap again to zoom in. While tracking multiple stations, an additional button is shown for quickly fitting all tracked stations in the view.
 
@@ -170,6 +170,8 @@ A *TRACE2-2* path requests two digipeater hops, where the digipeaters should ins
 The *ARISS* path is used when transmitting via the ISS (International Space Station) digipeater and other APRS satellites.
 
 An empty path will not request any digipeaters, and the packet will only be transmitted by your own station. This is useful for testing, or when you wish to transmit a position without any digipeater retransmissions.
+
+The aprs.fi blog has a https://blog.aprs.fi/2020/02/how-aprs-paths-work.html[detailed article on APRS paths and digipeaters].
 
 ==== Custom paths
 
@@ -443,3 +445,7 @@ If you have any questions, feedback, or issues with the app, please contact the 
 You can also send a message to the https://groups.google.com/g/aprsfi[aprs.fi discussion group] where many users and APRS developers are active.
 
 The group is a good place to ask questions and report issues, but please note that it is specific to the aprs.fi web site and the iOS app, and not a general APRS group. Messages about other APRS applications or services may be rejected. Messages from new users are moderated, so they will not appear immediately.
+
+==== Footnote
+
+*Thank you for reading all the way to the end, and for using the aprs.fi iOS app! I hope you find it useful and enjoyable to use.*
