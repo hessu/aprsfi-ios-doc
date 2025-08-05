@@ -197,7 +197,7 @@ Note that the APRS-IS is a public network, and your position will be visible to 
 
 === Beaconing via TNC
 
-To transmit your position via a TNC, you need to set up a TNC connection. See the section on connecting to a radio below for details.
+To transmit your position via a radio, you need to set up a TNC connection. Please see <<Connecting to a radio>>.
 
 After a TNC is set up, enable *Beacon via TNC* in the *Beacon* tab.
 
@@ -376,11 +376,16 @@ While the DSP modem is running, the app will continuously record and play back a
 
 === Using a TNC via TCP/IP
 
-The aprs.fi app can connect to KISS TNCs and software modems with a TCP KISS port over the network. If a TNC on the local Wi-Fi network supports https://github.com/hessu/aprs-specs/blob/master/hamradio-zeroconfig.md[mDNS service discovery (Bonjour)], it will be automatically discovered and listed in the *Select a TNC* view. If not, you can add a TNC manually by entering its DNS hostname or IP address, and the TCP port. Using the manual method you can also connect to a remote TNC using a VPN connection.
+The aprs.fi app can connect to KISS TNCs and software modems with a TCP KISS port over the network. If a TNC on the local Wi-Fi network supports https://github.com/hessu/aprs-specs/blob/master/hamradio-zeroconfig.md[mDNS service discovery (Bonjour)], it will be automatically discovered and listed in the *Select a TNC* view. If not, you can add a TNC manually by entering its DNS hostname or IP address, and the TCP port. Using the manual method you can also connect to a remote TNC through a VPN connection.
 
 [NOTE]
 ====
 iOS does not let apps maintain connections in the background, except for specific purposes such as VoIP. This means that the app will not stay connected to a TCP KISS TNC in the background.  It will reconnect automatically when the app is brought to the foreground again.
+====
+
+[CAUTION]
+====
+The TCP KISS connection method does not support authentication. Do not make a TCP KISS TNC available to the Internet with port forwarding, as anyone on the Internet could connect to it and transmit packets. Always use a VPN to connect to a remote TNC.
 ====
 
 
