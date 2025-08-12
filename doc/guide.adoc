@@ -313,7 +313,7 @@ The https://digirig.net/[digirig] *VOX PTT Cable for Smartphones* is recommended
 
 Alternatively, a *BTECH APRS-K1* cable can be used, but it requires enabling VOX on the radio.
 
-New devices without a 3.5mm earphone connector additionally require a Lightning or USB-C adapter.
+New devices without a 3.5mm earphone connector additionally require an *USB-C to 3.5 mm Headphone Jack Adapter* or a *Lightning to 3.5 mm Headphone adapter*. Apple does not sell the plain Lightning adapter any more, but the *Belkin 3.5 mm Audio + Charge Rockstar* is also great, and allows charging the iPhone while using the audio output. Get a good-quality device from a reputable manufacturer, as some cheaper adapters do not work reliably, may produce extra noise, or fail when used with a transmitter due to the RF interference. The Apple adapter is good and cheap ($9 USD at the time of writing).
 
 In a pinch, placing the microphone next to the speaker of a receiver on the APRS frequency may also work for testing.
 
