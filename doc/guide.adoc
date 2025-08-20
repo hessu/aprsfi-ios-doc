@@ -309,7 +309,11 @@ When a BLE TNC is connected, iOS allows the app to receive APRS packets in the b
 
 The app contains a high-performance software modem which allows you to connect a transceiver directly to the headphone/microphone connector of an iPhone or iPad. The DSP modem is available when an Extra Features subscription is active.
 
-The https://digirig.net/[digirig] *VOX PTT Cable for Smartphones* is recommended for connecting the iOS device to a radio. It has a 3.5mm TRRS connector for the iPhone headphone output, and another 3.5mm TRRS connector for a radio-specific cable. The *VOX PTT Cable* contains a simple hardware VOX circuit which detects audio from the iPhone and keys the radio's PTT line. The transmitter is keyed very rapidly for the duration of the data transmission, and the delay issues of regular VOX are avoided.
+The https://digirig.net/product/digirig-lite/[Digirig Lite] version 1.2 is recommended for connecting the iOS device to a radio. Attach the USB-C cable of the Lite to a new iPhone or iPad with USB-C, or to an older device through the *Apple Lightning to USB 3 Camera Adapter*. The Lite contains an USB sound card, and (since v1.1) a hardware VOX circuit which is required for operation on iPhone & iPad. When asked if you're connecting headphones, select "no". This setting can later be changed in *iOS Settings -> Sounds -> Headphone Safety -> USB Audio Accessories -> Current USB Audio Accessory*. The https://digirig.net/digirig-lite-setup-manual/[setup manual] is a good read.
+
+The benefit of using an USB audio device is that notification sounds from the iPhone/iPad will be emitted from the speaker - they won't go to the USB device and will not cause the radio to transmit the notifications.
+
+Alternatively, the https://digirig.net/product/vox-ptt-cable-for-smartphones/[Digirig VOX PTT Cable for Smartphones] works for connecting the iOS device to a radio, it's a little bit cheaper. It has a 3.5mm TRRS connector for the iPhone headphone output, and another 3.5mm TRRS connector for a radio-specific cable. The *VOX PTT Cable* contains a simple hardware VOX circuit which detects audio from the iPhone and keys the radio's PTT line. The transmitter is keyed very rapidly for the duration of the data transmission, and the delay issues of regular VOX are avoided.
 
 Alternatively, a *BTECH APRS-K1* cable can be used, but it requires enabling VOX on the radio.
 
