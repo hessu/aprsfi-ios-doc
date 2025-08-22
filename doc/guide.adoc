@@ -29,7 +29,7 @@ Features currently included in the *Extra Features* subscription are:
 
 === Signing up for the aprs.fi account
 
-Many features require a free aprs.fi user account.  You can sign up for the account from the *More* tab -> *My account*, if you don't have one yet'.  The account is used for synchronizing your settings, and for messaging and beaconing your position.
+Many features require a free aprs.fi user account.  You can sign up for the account from the *More* tab -> *My account*, if you don't have one yet.  The account is used for synchronizing your settings, and for messaging and beaconing your position.
 
 If the confirmation email does not arrive, please check your spam/junk folder.  If you still do not receive the email, do contact me: <<_feedback_and_support>>
 
@@ -309,6 +309,8 @@ When a BLE TNC is connected, iOS allows the app to receive APRS packets in the b
 
 The app contains a high-performance software modem which allows you to connect a transceiver directly to the headphone/microphone connector of an iPhone or iPad. The DSP modem is available when an Extra Features subscription is active.
 
+==== Hardware for attaching the iOS device to a radio
+
 The https://digirig.net/product/digirig-lite/[Digirig Lite] version 1.2 is recommended for connecting the iOS device to a radio. Attach the USB-C cable of the Lite to a new iPhone or iPad with USB-C, or to an older device through the *Apple Lightning to USB 3 Camera Adapter*. The Lite contains a USB sound card, and (since v1.1) a hardware VOX circuit which is required for operation on iPhone & iPad. When asked if you're connecting headphones, select "no". This setting can later be changed in *iOS Settings -> Sounds -> Headphone Safety -> USB Audio Accessories -> Current USB Audio Accessory*. The https://digirig.net/digirig-lite-setup-manual/[setup manual] is a good read.
 
 The benefit of using an USB audio device is that notification sounds from the iPhone/iPad will be emitted from the speaker - they won't go to the USB device and will not cause the radio to transmit the notifications.
@@ -381,6 +383,10 @@ While the DSP modem is running, the app will continuously record and play back a
 === Using a TNC via TCP/IP
 
 The aprs.fi app can connect to KISS TNCs and software modems with a TCP KISS port over the network. If a TNC on the local Wi-Fi network supports https://github.com/hessu/aprs-specs/blob/master/hamradio-zeroconfig.md[mDNS service discovery (Bonjour)], it will be automatically discovered and listed in the *Select a TNC* view. If not, you can add a TNC manually by entering its DNS hostname or IP address, and the TCP port. Using the manual method you can also connect to a remote TNC through a VPN connection.
+
+A popular option is to install the https://github.com/wb2osz/direwolf[Dire Wolf] software DSP modem on a Raspberry Pi, or on a PC running Linux, Windows or macOS. The software can be configured to listen for TCP KISS connections on a specific port (8001 by default), and it will work with the aprs.fi app. Dire Wolf supports mDNS service discovery on Linux and macOS.
+
+The WX3in1 device also has KISS over TCP, but it only supports receiving packets, and does not have mDNS.
 
 [NOTE]
 ====
