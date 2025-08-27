@@ -122,6 +122,7 @@ Manual termination of apps is normally not necessary, as iOS will automatically 
 === If nothing is shown on the map
 
 * If you are tracking a specific station, its callsign is shown in the lower right corner. Tap it to center on the station, or drag it to the left side to stop tracking and show all stations again.
+* IF you've zoomed out to show a very large area, the database query to load the data may be too heavy, and the app will pause updates. A message will be shown when this happen. Zoom a bit closer to refresh again.
 * Check filters. Tap the *Filter* (funnel) button in the bottom of the map view, and check if any filters are enabled. Make sure the "All stations" and "From network" filters are enabled.
 
 === Station details view
