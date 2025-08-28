@@ -70,15 +70,23 @@ The default time range is 1 hour, but you can select from a number of predefined
 === Filters
 
 image::map-filter1@2x.png[Filter,32,32,float="right",align="center"]
-To filter the stations shown on the map, tap the *Filter* (funnel) button in the bottom of the map view. A few default filters are set up as an example and can be simply enabled and disabled. Filters are not applied when tracking specific stations.
+To filter the stations shown on the map, tap the *Filter* (funnel) button in the bottom of the map view. A few default filters are set up as an example.
+
+Each of the filters in the chain can be enabled and disabled independently with the toggle switch on the left. A disabled filter has no effect. The following filter shows only iGate and Digipeater stations:
+
+image::filter-igate-digi-only.png[Filter with igates and digipeaters only,194,170,align="center"]
+
+Filters are not applied when tracking specific stations.
 
 The filter chain has two sections: *Display these* and *But not these*. If one of the enabled filters in the *Display these* section matches a station, it will be shown on the map. If nothing matches the filters, no stations will be shown – enable the "All stations" filter to show all stations again.
 
 image::button-filter-up1@2x.png[Filter up,32,32,float="right",align="center"]
 image::button-filter-down1@2x.png[Filter up,32,32,float="right",align="center"]
-The *But not these* section contains the filters that will hide stations which would otherwise be shown by the previous filters. It can be used to create exceptions. Press the red and blue up/down buttons on the right to move filters between the two sections.
+The *But not these* section contains filters that will hide stations which would otherwise be shown by the previous filters. It can be used to create exceptions, such as "Show all stations except weather stations". Press the red and blue up/down buttons on the right to move filters between the two sections.
 
-Each of the filters in the chain can be enabled and disabled independently with the toggle switch on the left.
+The following filter will show all stations, except maritime traffic reported with AIS and weather stations:
+
+image::filter-all-except-ais-wx.png[Filter out AIS and WX,234,279,align="center"]
 
 Press the *+* button to add a custom filter. You can set up filters for any combination of the following criteria:
 
