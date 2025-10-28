@@ -445,6 +445,13 @@ You may also change the main callsign attached to the account here, using the *C
 
 If you have multiple callsigns, you can set up multiple station profiles in the *Beacon* tab, each with a different callsign, SSID and settings. The callsign-SSID selected in the *Beacon* tab is used for beaconing and messaging. The callsign-SSID of each profile can be changed with the *Rename* button in the *Beacon* tab.
 
+If you wish to change the email address of your aprs.fi account, or add a backup email address, please do it on the https://aprs.fi/account/[Account page of the aprs.fi web site]:
+
+1. Add a new email address
+2. Confirm it by clicking the link in the confirmation email
+3. Set the new email address as the primary address: Click *Change* and *make primary*.
+4. (Optional) Remove the old email address
+
 
 === Subscription
 
