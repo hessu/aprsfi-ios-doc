@@ -21,7 +21,7 @@ jobs:
       id: adocbuild
       uses: tonynv/asciidoctor-action@master
       with:
-          program: "asciidoctor -D generated --backend=html5 -o index.html doc/guide.adoc"
+          program: "asciidoctor -D generated --backend=html5 -a ios -o index.html doc/guide.adoc"
 
     - name: copy images
       run: |

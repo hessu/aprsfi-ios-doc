@@ -1,17 +1,34 @@
 
-= aprs.fi app User Guide
+ifdef::ios[]
+= aprs.fi iOS User Guide
+endif::ios[]
+ifdef::android[]
+= aprs.fi Android User Guide
+endif::android[]
 :toc:
 :imagesdir: ./img/
 
 Welcome to the aprs.fi app! I thank you for your purchase, it'll help me to keep the service running.  This guide will get you started.
 
-The aprs.fi app is a quick and mobile device friendly version of the familiar web service.  It downloads current APRS information directly from the aprs.fi service and displays it instantly.  It can also be attached to a radio for the proper Amateur Radio experience.  The app works great on all current iPhones and iPads.
+The aprs.fi app is a quick and mobile device friendly version of the familiar web service.  It downloads current APRS information directly from the aprs.fi service and displays it instantly.  It can also be attached to a radio for the proper Amateur Radio experience.
+ifdef::ios[]
+The app works great on all current iPhones and iPads.
+endif::ios[]
+ifdef::android[]
+The app works great on all current Android phones and tablets.
+endif::android[]
 
 == Before we start
 
 === Mobile data usage
 
-The app requires a working Internet connection either through Wi-Fi or cellular data.  Your cell provider may charge you for transferred data.  All data is compressed by aprs.fi before it is downloaded by the app.  The amount of data transferred by the aprs.fi app may be monitored from *iOS Settings* -> *Mobile Data*.
+The app requires a working Internet connection either through Wi-Fi or cellular data.  Your cell provider may charge you for transferred data.  All data is compressed by aprs.fi before it is downloaded by the app.
+ifdef::ios[]
+The amount of data transferred by the aprs.fi app may be monitored from *iOS Settings* -> *Mobile Data*.
+endif::ios[]
+ifdef::android[]
+The amount of data transferred by the aprs.fi app may be monitored from *Android Settings* -> *Network & internet* -> *Data usage*.
+endif::android[]
 
 === In-app payments
 
@@ -117,15 +134,19 @@ To change between navigation and satellite map styles, tap the *Map style* butto
 
 The *Navigation* style is a standard map with streets and place names, while the *Satellite* style shows satellite imagery.  The third option is *Hybrid*, which combines the two styles, showing streets and place names on top of the satellite imagery.
 
+ifdef::ios[]
 The app currently uses Apple Maps for the map view.
+endif::ios[]
 
 === The app remembers your last view
 
 The application stores the last view and map settings, so the next time you open the app, it will show the same view as you left it. It remembers filter settings, the tracked stations, and the map position and zoom level. It will even remember them if you power off the device and turn it back on later.
 
+ifdef::ios[]
 However, if you choose to manually terminate the app by swiping it away in the app switcher, iOS will delete the state restoration file. The app will then open up with the default view. This may be useful if the app is misbehaving and you want to reset it.
 
 Manual termination of apps is normally not necessary, as iOS will automatically stop apps in the background, and release them from memory when memory is needed for other apps. This is transparent to the user, as the apps will be restarted automatically when you open them again. Apps are not allowed to execute in the background for long periods of time, so they will not consume battery power when you are not using them.
+endif::ios[]
 
 === If nothing is shown on the map
 
@@ -138,14 +159,19 @@ Manual termination of apps is normally not necessary, as iOS will automatically 
 Pull the information table down to refresh the information. It will be refreshed periodically, too.
 
 image::info-show-graphs@2x.png[Show graphs,32,32,float="right",align="center"]
-Graphs of speed, altitude, weather and telemetry can be drawn for many stations. On an iPhone, the graphs can be accessed using the graphs button in the top right corner, or by swiping the details view to the left.
+Graphs of speed, altitude, weather and telemetry can be drawn for many stations.
+ifdef::ios[]
+On an iPhone, the graphs can be accessed using the graphs button in the top right corner, or by swiping the details view to the left.
+endif::ios[]
 
 === Favourite stations
 
 image::button-favourite@2x.png[Favourite,32,32,float="right",align="center"]
 You can add stations to your favourites by tapping the *Star* button in the *station details* view. Favourites are shown in the *Favourites* tab in *Search*, and can be tracked from there.
 
+ifdef::ios[]
 On the iPad, starting from iOS 18, the search text entry field needs to be activated to view the search scope tabs (Stations, Favourites, Addresses).
+endif::ios[]
 
 Favourite stations are synchronised with the aprs.fi service, so they are available on all your devices. You can also access your favourites on the web site using the *Star* button on the right side of the map view.
 
@@ -216,9 +242,11 @@ Data transmitted on amateur radio frequencies is not private, and will typically
 
 === Beaconing in the background
 
+ifdef::ios[]
 The app will continue to transmit your position in the background, if it is allowed by iOS privacy settings.  For the app to be able to transmit in the background, you need to enable background location updates (aprs.fi More -> Settings -> Privacy -> Location).
 
 The `ALLOW LOCATION ACCESS` setting should be set to `Always`. If you select `While Using the App`, the app will only transmit your position when it is in the foreground and the screen is not locked.
+endif::ios[]
 
 === Deleting uploaded position history
 
@@ -235,7 +263,10 @@ For messaging to work, a valid callsign-SSID must first be set up in the *Beacon
 
 To start a conversation, tap the *Messages* tab, and then tap the *New message* (letter) button in the top right corner. Enter the destination callsign, with the correct SSID (Secondary System Identifier) if necessary, and press the *Send* button to open up a new message thread.
 
-Alternatively, start a new message thread directly from a *station details* view. On the iPhone, the *Messages* view can be accessed via the *More* button on the top of the station view. On the iPad, a *Messages* (letter) button is available.
+Alternatively, start a new message thread directly from a *station details* view.
+ifdef::ios[]
+On the iPhone, the *Messages* view can be accessed via the *More* button on the top of the station view. On the iPad, a *Messages* (letter) button is available.
+endif::ios[]
 
 To send a message, simply enter the text in the message input field and tap the *Send* button. Transmitted and received messages are shown in the message thread, just like in any other messaging app.
 
@@ -247,7 +278,13 @@ There is no privacy in APRS messaging. Messages sent via the APRS-IS network are
 
 === Push notifications for new messages
 
-The aprs.fi backend service will send push notifications for new messages to the app. To receive push notifications, you need to have them enabled in the iOS Settings app. When first using messaging, the app will ask you to allow notifications. If you accidentally denied notifications, you can enable them again in *iOS Settings* -> *aprs.fi* -> *Privacy* -> *Notifications*.
+The aprs.fi backend service will send push notifications for new messages to the app. To receive push notifications, you need to have them enabled in the device Settings app. When first using messaging, the app will ask you to allow notifications.
+ifdef::ios[]
+If you accidentally denied notifications, you can enable them again in *iOS Settings* -> *aprs.fi* -> *Notifications*.
+endif::ios[]
+ifdef::android[]
+If you accidentally denied notifications, you can enable them again in *Android Settings* -> *Apps* -> *aprs.fi* -> *Notifications*.
+endif::android[]
 
 === Message retransmissions and acknowledgement
 
@@ -291,11 +328,18 @@ The aprs.fi app supports multiple methods for connecting to a radio or TNC (Term
 
 === Using a BLE TNC or radio
 
-BLE (Bluetooth Low Energy) is a wireless technology for connecting devices with low power consumption. It is a part of Bluetooth 4.0 and later, and is supported by all iPhones and iPads. iPhone apps may connect to BLE devices, but they cannot communicate with classic Bluetooth devices. Many older Bluetooth-capable devices only support the classic Bluetooth Serial Port Profile (SPP) and are not accessible from iOS apps.
+BLE (Bluetooth Low Energy) is a wireless technology for connecting devices with low power consumption. It is a part of Bluetooth 4.0 and later.
+ifdef::ios[]
+BLE is supported by all iPhones and iPads. iPhone apps may connect to BLE devices, but they cannot communicate with classic Bluetooth devices. Many older Bluetooth-capable devices only support the classic Bluetooth Serial Port Profile (SPP) and are not accessible from iOS apps.
+endif::ios[]
 
-The aprs.fi iOS app automatically detects and supports all TNCs which support the https://github.com/hessu/aprs-specs/blob/master/BLE-KISS-API.md[BLE KISS specification]. There is no need to add support for new radios or TNCs to the app, as long as they follow the BLE KISS specification. They just work, and they also work with a number of other apps following the common protocol.
+The aprs.fi app automatically detects and supports all TNCs which support the https://github.com/hessu/aprs-specs/blob/master/BLE-KISS-API.md[BLE KISS specification]. There is no need to add support for new radios or TNCs to the app, as long as they follow the BLE KISS specification. They just work, and they also work with a number of other apps following the common protocol.
 
-BLE devices are automatically discovered and listed in the *Select a TNC* view. If you have multiple BLE TNCs, you can select the one to use for the connection. BLE TNCs do not need to be paired with in iOS Settings. Just turn the BLE device on, enable BLE in the device if necessary, and pick it from the list. It feels like magic!
+BLE devices are automatically discovered and listed in the *Select a TNC* view. If you have multiple BLE TNCs, you can select the one to use for the connection.
+ifdef::ios[]
+BLE TNCs do not need to be paired with in iOS Settings.
+endif::ios[]
+Just turn the BLE device on, enable BLE in the device if necessary, and pick it from the list. It feels like magic!
 
 Most current BLE TNCs only support a single connection at a time. If you are also using a separate configuration app for the device, you may need to disconnect the TNC from that app before you can connect to it with the aprs.fi app. Likewise, you may need to disconnect the TNC from within the aprs.fi app before you can use it with another app.
 
@@ -310,18 +354,21 @@ Most current BLE TNCs only support a single connection at a time. If you are als
 
 Notably, none of the current Kenwood APRS radios support BLE KISS. The *B.B. Link Adapter* can act as a bridge between the classic Bluetooth TH-D74/D75 radios and BLE, allowing the app to connect to the radio.
 
+ifdef::ios[]
 [BLEin the background]
 ====
 When a BLE TNC is connected, iOS allows the app to receive APRS packets in the background. If Beacon is enabled, the app will also transmit position reports in the background. This is a valid background execution mode for iOS apps.
 ====
+endif::ios[]
 
 
 === Using the Software DSP modem
 
-The app contains a high-performance software modem which allows you to connect a transceiver directly to the headphone/microphone connector of an iPhone or iPad. The DSP modem is available when an Extra Features subscription is active.
+The app contains a high-performance software modem which allows you to connect a transceiver directly to the headphone/microphone connector of your device. The DSP modem is available when an Extra Features subscription is active.
 
-==== Hardware for attaching the iOS device to a radio
+==== Hardware for attaching the device to a radio
 
+ifdef::ios[]
 The https://digirig.net/product/digirig-lite/[Digirig Lite] version 1.2 is recommended for connecting the iOS device to a radio. Attach the USB-C cable of the Lite to a new iPhone or iPad with USB-C, or to an older device through the *Apple Lightning to USB 3 Camera Adapter*. The Lite contains a USB sound card, and (since v1.1) a hardware VOX circuit which is required for operation on iPhone & iPad. When asked if you're connecting headphones, select "no". This setting can later be changed in *iOS Settings -> Sounds -> Headphone Safety -> USB Audio Accessories -> Current USB Audio Accessory*. The https://digirig.net/digirig-lite-setup-manual/[setup manual] is a good read.
 
 The benefit of using an USB audio device is that notification sounds from the iPhone/iPad will be emitted from the speaker - they won't go to the USB device and will not cause the radio to transmit the notifications.
@@ -331,12 +378,13 @@ Alternatively, the https://digirig.net/product/vox-ptt-cable-for-smartphones/[Di
 Alternatively, a *BTECH APRS-K1* cable can be used, but it requires enabling VOX on the radio.
 
 New devices without a 3.5mm earphone connector additionally require an *USB-C to 3.5 mm Headphone Jack Adapter* or a *Lightning to 3.5 mm Headphone adapter*. Apple does not sell the plain Lightning adapter any more, but the *Belkin 3.5 mm Audio + Charge Rockstar* is also great, and allows charging the iPhone while using the audio output. Get a good-quality device from a reputable manufacturer, as some cheaper adapters do not work reliably, may produce extra noise, or fail when used with a transmitter due to the RF interference. The Apple adapter is good and cheap ($9 USD at the time of writing).
+endif::ios[]
 
 In a pinch, placing the microphone next to the speaker of a receiver on the APRS frequency may also work for testing.
 
 [CAUTION]
 ====
-Remember to silence all alerts on the iPhone when using VOX. Put it in the `Do Not Disturb` mode. Otherwise incoming calls and notifications will trigger VOX and key the transmitter. It sounds quite silly when you hear it on the air!
+Remember to silence all alerts on your device when using VOX. Put it in the `Do Not Disturb` mode. Otherwise incoming calls and notifications will trigger VOX and key the transmitter. It sounds quite silly when you hear it on the air!
 ====
 
 ==== Receive audio level adjustment
@@ -345,7 +393,7 @@ Adjust the volume of your receiver so that the oscilloscope view shows a nice wa
 
 ==== Transmit audio level adjustment
 
-Adjust the transmit audio level using the normal volume controls of the iOS device while the transceiver is connected. The device will remember a separate audio level setting for the headphone output.
+Adjust the transmit audio level using the normal volume controls of your device while the transceiver is connected. The device will remember a separate audio level setting for the headphone output.
 
 Use a separate receiver to monitor the transmitted audio. Transmit audio should be a clean sine wave with no distortion. If the audio is distorted, reduce the transmit audio level until it is clean. For a rough adjustment compare the transmitted audio to other APRS stations on the air. If your audio sounds similar to other stations, it is likely OK. For best results use a service monitor or a spectrum analyzer to check the FM deviation.
 
@@ -353,7 +401,13 @@ When using a hardware VOX PTT cable, the transmit audio level should be set so t
 
 ==== PTT control and VOX
 
-There is no PTT line on the iPhone, and custom USB devices are not accessible from iOS apps, so the app needs to use VOX (Voice Operated Transmit) to control the transmitter. This means that the radio will start transmitting when it detects audio coming from the app, and stop transmitting when the audio stops.
+ifdef::ios[]
+There is no PTT line on the iPhone, and custom USB devices are not accessible from iOS apps, so the app needs to use VOX (Voice Operated Transmit) to control the transmitter.
+endif::ios[]
+ifdef::android[]
+The app uses VOX (Voice Operated Transmit) to control the transmitter, as standard Android does not provide access to a PTT line.
+endif::android[]
+This means that the radio will start transmitting when it detects audio coming from the app, and stop transmitting when the audio stops.
 
 [NOTE]
 ====
@@ -388,7 +442,7 @@ The new GPU hardware accelerated oscilloscope and waterfall views show the audio
 
 [NOTE]
 ====
-While the DSP modem is running, the app will continuously record and play back audio. This is a valid background execution mode for iOS apps, so the app will continue to receive and transmit APRS packets in the background.
+While the DSP modem is running, the app will continuously record and play back audio. This is a valid background execution mode, so the app will continue to receive and transmit APRS packets in the background.
 ====
 
 === Using a TNC via TCP/IP
@@ -399,10 +453,12 @@ A popular option is to install the https://github.com/wb2osz/direwolf[Dire Wolf]
 
 The WX3in1 device also has KISS over TCP, but it only supports receiving packets, and does not have mDNS.
 
+ifdef::ios[]
 [NOTE]
 ====
 iOS does not let apps maintain connections in the background, except for specific purposes such as VoIP. This means that the app will not stay connected to a TCP KISS TNC in the background.  It will reconnect automatically when the app is brought to the foreground again.
 ====
+endif::ios[]
 
 [CAUTION]
 ====
@@ -416,7 +472,7 @@ The TCP KISS connection method does not support authentication. Do not make a TC
 
 Application settings can be accessed from the *More* tab -> Settings. Settings are divided the following sections:
 
-* Privacy – iOS privacy settings for the app
+* Privacy – device privacy settings for the app
 * Map view:
 ** Default time range settings
 ** Disable display sleep: Off / In map view / When plugged in / Always
@@ -461,15 +517,27 @@ A subscription is required to use the Extra Features of the app. The subscriptio
 
 The subscription is available as a monthly or yearly plan. The yearly plan is cheaper than the monthly plan, and it is recommended for long-term users.
 
+ifdef::ios[]
 Subscriptions are managed by Apple, and can be cancelled at any time. If you cancel your subscription, you will still have access to the Extra Features until the end of the current billing period. Cancellation must be done at least 24 hours before the renewal date to avoid being charged for the next period.
 
 The yearly subscription, as well as the application itself, can be shared with family members using *Family Sharing*.
+endif::ios[]
+ifdef::android[]
+Subscriptions are managed by Google Play, and can be cancelled at any time. If you cancel your subscription, you will still have access to the Extra Features until the end of the current billing period.
+endif::android[]
 
 === Refunds
 
+ifdef::ios[]
 If you have purchased the app or subscription accidentally, or you are not satisfied with it, you can https://support.apple.com/en-us/118223[request a refund from Apple].
 
 Please note that refunds are handled by Apple, and the aprs.fi developer cannot issue refunds directly. All sales and payments happen via Apple, and the aprs.fi team does not have access to your payment information.
+endif::ios[]
+ifdef::android[]
+If you have purchased the app or subscription accidentally, or you are not satisfied with it, you can request a refund from Google Play.
+
+Please note that refunds are handled by Google, and the aprs.fi developer cannot issue refunds directly. All sales and payments happen via Google Play, and the aprs.fi team does not have access to your payment information.
+endif::android[]
 
 === Feedback and support
 
@@ -477,8 +545,13 @@ If you have any questions, feedback, or issues with the app, please contact the 
 
 You can also send a message to the https://groups.google.com/g/aprsfi[aprs.fi discussion group] where many users and APRS developers are active.
 
-The group is a good place to ask questions and report issues, but please note that it is specific to the aprs.fi web site and the iOS app, and not a general APRS group. Messages about other APRS applications or services may be rejected. Messages from new users are moderated, so they will not appear immediately.
+The group is a good place to ask questions and report issues, but please note that it is specific to the aprs.fi web site and app, and not a general APRS group. Messages about other APRS applications or services may be rejected. Messages from new users are moderated, so they will not appear immediately.
 
 ==== Footnote
 
+ifdef::ios[]
 *Thank you for reading all the way to the end, and for using the aprs.fi iOS app! I hope you find it useful and enjoyable to use.*
+endif::ios[]
+ifdef::android[]
+*Thank you for reading all the way to the end, and for using the aprs.fi Android app! I hope you find it useful and enjoyable to use.*
+endif::android[]
