@@ -1,9 +1,9 @@
 
-= aprs.fi iOS User Guide
+= aprs.fi app User Guide
 :toc:
 :imagesdir: ./img/
 
-Welcome to the aprs.fi iOS app! I thank you for your purchase, it'll help me to keep the service running.  This guide will get you started.
+Welcome to the aprs.fi app! I thank you for your purchase, it'll help me to keep the service running.  This guide will get you started.
 
 The aprs.fi app is a quick and mobile device friendly version of the familiar web service.  It downloads current APRS information directly from the aprs.fi service and displays it instantly.  It can also be attached to a radio for the proper Amateur Radio experience.  The app works great on all current iPhones and iPads.
 
@@ -11,13 +11,13 @@ The aprs.fi app is a quick and mobile device friendly version of the familiar we
 
 === Mobile data usage
 
-The app requires a working Internet connection either through Wi-Fi or cellular data.  Your cell provider may charge you for transferred data.  The amount of data transferred by the aprs.fi app may be monitored from *iOS Settings* -> *Mobile Data*.  All data is compressed by aprs.fi before it is downloaded by the app.
+The app requires a working Internet connection either through Wi-Fi or cellular data.  Your cell provider may charge you for transferred data.  All data is compressed by aprs.fi before it is downloaded by the app.  The amount of data transferred by the aprs.fi app may be monitored from *iOS Settings* -> *Mobile Data*.
 
 === In-app payments
 
 Some of the new features of this app are available through an in-app subscription. All basic features that are currently available in the app, and some functions which are added later on, will naturally stay available without additional payment.
 
-In-app subscriptions provide a sustainable business model. They ensure continuous interest in developing and maintaining the application and its backend service even after all APRS-using iPhone and iPad owners have already purchased the app.
+In-app subscriptions provide a sustainable business model. They ensure continuous interest in developing and maintaining the application and its backend service even after the finite number of interested APRS users have already purchased the app.
 
 Features currently included in the *Extra Features* subscription are:
 
@@ -121,7 +121,7 @@ The app currently uses Apple Maps for the map view.
 
 === The app remembers your last view
 
-The application stores the last view and map settings, so the next time you open the app, it will show the same view as you left it. It remembers filter settings, the tracked stations, and the map position and zoom level. It will even remember them if you power off the iPhone and turn it back on later.
+The application stores the last view and map settings, so the next time you open the app, it will show the same view as you left it. It remembers filter settings, the tracked stations, and the map position and zoom level. It will even remember them if you power off the device and turn it back on later.
 
 However, if you choose to manually terminate the app by swiping it away in the app switcher, iOS will delete the state restoration file. The app will then open up with the default view. This may be useful if the app is misbehaving and you want to reset it.
 
@@ -143,7 +143,9 @@ Graphs of speed, altitude, weather and telemetry can be drawn for many stations.
 === Favourite stations
 
 image::button-favourite@2x.png[Favourite,32,32,float="right",align="center"]
-You can add stations to your favourites by tapping the *Star* button in the *station details* view. Favourites are shown in the *Favourites* tab in *Search*, and can be tracked from there. On the iPad, starting from iOS 18, the search text entry field needs to be activated to view the search scope tabs (Stations, Favourites, Addresses).
+You can add stations to your favourites by tapping the *Star* button in the *station details* view. Favourites are shown in the *Favourites* tab in *Search*, and can be tracked from there.
+
+On the iPad, starting from iOS 18, the search text entry field needs to be activated to view the search scope tabs (Stations, Favourites, Addresses).
 
 Favourite stations are synchronised with the aprs.fi service, so they are available on all your devices. You can also access your favourites on the web site using the *Star* button on the right side of the map view.
 
