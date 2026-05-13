@@ -412,6 +412,47 @@ APRS features.
 ====
 endif::android[]
 
+ifdef::android[]
+=== Using a USB serial TNC
+
+Android supports USB serial TNCs connected via the USB port of the phone or
+tablet. Both native USB KISS TNCs (such as the Kenwood TH-D74 and TH-D75) and
+separate USB-to-serial adapters connected to a hardware TNC are supported.
+
+==== Connecting the device
+
+Plug the TNC or radio into the Android device using a USB cable. When prompted,
+grant the aprs.fi app permission to access the USB device. The device will then
+appear in the *USB serial TNCs* section of the *Select a TNC* view.
+
+Tap the device to connect. A dialog will ask for the *serial port speed*:
+
+* *Kenwood TH-D74 / TH-D75 and similar radios with a built-in USB port:* The
+  speed setting does not matter. These radios present a USB virtual serial port
+  (CDC ACM) to the phone — data travels at USB speed regardless of the setting.
+  Select any speed, such as 9600.
+* *USB-to-serial adapter connected to a hardware TNC:* Select the speed that
+  matches the serial port speed configured in the TNC hardware. Common speeds
+  are 9600 and 57600 bit/s. Check your TNC documentation.
+
+==== Setting the Kenwood TH-D74 / TH-D75 to KISS mode
+
+The same requirement applies as with Bluetooth: the radio must be in *KISS 12*
+mode, not *APRS 12* mode. In *APRS 12* mode the radio handles APRS internally
+and does not forward packets to the phone.
+
+In addition, the KISS TNC data port on the radio must be set to *USB*, not
+*Bluetooth*. If the data port is set to Bluetooth, the radio will send KISS
+data over Bluetooth SPP and nothing will come through the USB connection.
+
+[CAUTION]
+====
+While the radio is in KISS mode, its built-in APRS functions — such as the
+station list, messages, and the built-in map — are suspended. Return to
+*APRS 12* mode to re-enable the radio's own APRS features.
+====
+endif::android[]
+
 === Using the Software DSP modem
 
 The app contains a high-performance software modem which allows you to connect a transceiver directly to the headphone/microphone connector of your device. The DSP modem is available when an Extra Features subscription is active.
