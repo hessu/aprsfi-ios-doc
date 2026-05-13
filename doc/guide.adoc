@@ -362,6 +362,56 @@ When a BLE TNC is connected, iOS allows the app to receive APRS packets in the b
 endif::ios[]
 
 
+ifdef::android[]
+=== Using a Classic Bluetooth (SPP) TNC
+
+Classic Bluetooth Serial Port Profile (SPP) allows connecting to KISS TNCs which
+communicate over a classic Bluetooth serial connection. The Kenwood TH-D74 and
+TH-D75 radios support this mode.
+
+[NOTE]
+====
+Classic Bluetooth is only supported on Android. iPhone and iPad apps cannot
+communicate with classic Bluetooth devices; a BLE adapter such as the
+https://islandmagic.co/products/bb-link-adapter[Island Magic Co. B.B. Link Adapter]
+is required for use with iOS.
+====
+
+==== Pairing the radio with Android
+
+Before the radio appears in the aprs.fi app, it must be paired with the phone:
+
+1. On the Kenwood radio, open the *Bluetooth* menu and enable Bluetooth, then select
+   *Pairing* to put the radio into pairing mode.
+2. On the Android phone, open *Settings → Connected devices → Pair new device*.
+   The radio will appear in the list — tap it to pair. Accept the pairing on the
+   radio if prompted.
+
+After pairing, the radio will appear in the *Paired Bluetooth TNCs* section of
+the *Select a TNC* view in the aprs.fi app. The app needs access to Bluetooth — if
+it asks for permission, tap *Grant*.
+
+==== Setting the Kenwood TH-D74 / TH-D75 to KISS mode
+
+The radio must be in *KISS 12* mode, not *APRS 12* mode:
+
+* In *APRS 12* mode, the radio handles APRS itself and does not forward packets
+  to the Bluetooth TNC client — no packets will appear in the app.
+* In *KISS 12* mode, the radio acts as a plain KISS TNC and forwards all received
+  packets to the connected phone. The app decodes the packets.
+
+To enable KISS mode, press F + 5 (APRS) until the display says "KISS 12"
+(12 refers to the 1200 bit/s AFSK modem speed used by APRS).
+
+[CAUTION]
+====
+While the radio is in KISS mode, its built-in APRS functions — such as the
+station list, messages, and the built-in map — are suspended. The radio acts
+as a plain radio modem. Return to *APRS 12* mode to re-enable the radio's own
+APRS features.
+====
+endif::android[]
+
 === Using the Software DSP modem
 
 The app contains a high-performance software modem which allows you to connect a transceiver directly to the headphone/microphone connector of your device. The DSP modem is available when an Extra Features subscription is active.
