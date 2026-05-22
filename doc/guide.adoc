@@ -495,6 +495,20 @@ The iGate is enabled from the *More* tab -> iGate. The iGate will use the callsi
 A table of recently heard stations can be accessed from the *iGate* tab. It shows the callsign, symbol, distance, and the time of the last heard packet for each station. When packets from a station are received via different paths, all the paths are displayed. The table is also maintained when the iGate is disabled.
 
 
+=== Map Overlays
+
+Custom map overlays can be loaded on top of the APRS map from the *More* tab -> *Map Overlays*. Each overlay is a named GeoJSON or KML file loaded from a URL or imported from a local file.
+
+Supported feature types:
+
+* *GeoJSON*: Point, LineString, MultiLineString, Polygon, MultiPolygon, and GeometryCollection features. The feature `name` property is used as the label.
+* *KML*: Placemarks containing Point, LineString, and Polygon geometries. The placemark `<name>` element is used as the label.
+
+Overlays are rendered on the map in blue. Tapping a line, polygon, or point placemark opens a callout showing the feature name.
+
+Multiple overlays can be configured and individually enabled or disabled.
+
+
 === My account
 
 This is where you can log in to your aprs.fi user account, or create a new one. Logging in is necessary for messaging, beaconing your position, and sychronizing your favourites and settings with the aprs.fi service.
