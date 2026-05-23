@@ -588,7 +588,9 @@ A table of recently heard stations can be accessed from the *iGate* tab. It show
 
 === Map Overlays
 
-Custom map overlays can be loaded on top of the APRS map from the *More* tab -> *Map Overlays*. Each overlay is a named GeoJSON or KML file loaded from a URL or imported from a local file.
+Custom map overlays can be loaded on top of the APRS map from the *More* tab -> *Map Overlays*. Each overlay is a named GeoJSON or KML file loaded from a URL or imported from a local file. KMZ files (zipped KML) are also supported. The maximum overlay file size is 50 MB.
+
+A file can be transferred to aprs.fi directly from another app on the device — use the share function in any app (such as Files or Dropbox) and select aprs.fi as the destination.
 
 Supported feature types:
 
