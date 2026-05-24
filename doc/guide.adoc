@@ -71,7 +71,7 @@ When tracking multiple stations, the *Fit* button will fit all tracked stations 
 === Navigating on the map
 
 image::map-center-device1@2x.png[Center,32,32,float="right",align="center"]
-To center on your current location, tap the *Centering* button in the lower right corner of the map. Tap again to zoom in.
+To center on your current location, tap the *Centering* button in the lower right corner of the map; the map zooms in if it is not already zoomed in closer. Once centered, tap again to switch the map orientation between north-up and heading-up.
 
 To center on a currently tracked station, tap the respective callsign button in the lower right corner. Tap again to zoom in. While tracking multiple stations, an additional button is shown for quickly fitting all tracked stations in the view.
 
