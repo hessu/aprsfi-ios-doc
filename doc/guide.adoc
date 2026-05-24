@@ -636,6 +636,8 @@ ifdef::android[]
 Subscriptions are managed by Google Play, and can be cancelled at any time. If you cancel your subscription, you will still have access to the Extra Features until the end of the current billing period.
 endif::android[]
 
+Subscription sharing between Android and iOS, within the same aprs.fi user account, will be implemented in the near future.
+
 === Refunds
 
 ifdef::ios[]
