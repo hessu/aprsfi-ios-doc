@@ -8,29 +8,36 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    name: asciidoctor -D doc --backend=html5 -o index.html -a toc2 doc/guide.adoc
+    name: Build iOS and Android guides
     steps:
     - name: Checkout code
       uses: actions/checkout@v2
 
     - name: mkdir generated
       run: |
-        mkdir generated
+        mkdir -p generated/ios generated/android
 
-    - name: Get build container
-      id: adocbuild
+    - name: Build iOS guide
+      id: adocbuild_ios
       uses: tonynv/asciidoctor-action@master
       with:
-          program: "asciidoctor -D generated --backend=html5 -a ios -o index.html doc/guide.adoc"
+          program: "asciidoctor -D generated/ios --backend=html5 -a ios -o index.html doc/guide.adoc"
+
+    - name: Build Android guide
+      id: adocbuild_android
+      uses: tonynv/asciidoctor-action@master
+      with:
+          program: "asciidoctor -D generated/android --backend=html5 -a android -o index.html doc/guide.adoc"
 
     - name: copy images
       run: |
-        cp -a doc/img generated/img
+        cp -a doc/img generated/ios/img
+        cp -a doc/img generated/android/img
 
     - name: Archive artifacts
       uses: actions/upload-artifact@v4
       with:
-        name: aprsfi-ios-docs-release
+        name: aprsfi-docs-release
         path: |
             generated
 
@@ -45,16 +52,25 @@ jobs:
       - name: Download artifacts
         uses: actions/download-artifact@master
         with:
-          name: aprsfi-ios-docs-release
+          name: aprsfi-docs-release
           path: build
 
-      - name: Sync artifacts with AWS S3
+      - name: Sync iOS guide with AWS S3
         env:
           AWS_S3_BUCKET: ${{ secrets.AWS_S3_BUCKET }}
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         run: |
           aws s3 sync \
-            ./build "s3://$AWS_S3_BUCKET" \
+            ./build/ios "s3://$AWS_S3_BUCKET/ios" \
             --region eu-west-1
 
+      - name: Sync Android guide with AWS S3
+        env:
+          AWS_S3_BUCKET: ${{ secrets.AWS_S3_BUCKET }}
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        run: |
+          aws s3 sync \
+            ./build/android "s3://$AWS_S3_BUCKET/android" \
+            --region eu-west-1
