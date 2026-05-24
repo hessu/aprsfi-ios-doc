@@ -318,7 +318,10 @@ This will delete all messages in the thread and the thread itself. The messages 
 
 ==== Mass deletion of messages
 
-To delete many threads at once, tap the *Edit* button in the top left corner of the message threads view. This will enable the edit mode, where you can select multiple threads to delete. Tap the *Delete* button in the bottom right corner to delete all selected threads.
+To delete many threads at once, tap the *Edit* button in the
+ifdef::ios[top left corner]
+ifdef::android[top right corner]
+of the message threads view. This will enable the edit mode, where you can select multiple threads to delete. Tap the *Delete* button in the bottom right corner to delete all selected threads.
 
 To delete all threads containing a specific word or phrase, enter the search term in the search field at the top of the message threads view, then tap the *Select all* button in the bottom left corner, and the *Delete* button in the bottom right. This will delete all threads matching the search term. This is useful for deleting all *APRS Thursday* messages, which contain the word *HOTG*.
 
@@ -641,9 +644,17 @@ If you have purchased the app or subscription accidentally, or you are not satis
 Please note that refunds are handled by Apple, and the aprs.fi developer cannot issue refunds directly. All sales and payments happen via Apple, and the aprs.fi team does not have access to your payment information.
 endif::ios[]
 ifdef::android[]
-If you have purchased the app or subscription accidentally, or you are not satisfied with it, you can request a refund from Google Play.
+If you have purchased the app or subscription accidentally, or you are not satisfied with it, you can request a refund.
 
-Please note that refunds are handled by Google, and the aprs.fi developer cannot issue refunds directly. All sales and payments happen via Google Play, and the aprs.fi team does not have access to your payment information.
+If the purchase was made within the last 48 hours, please https://support.google.com/googleplay/workflow/9813244[request a refund directly from Google].
+
+Otherwise, please contact the developer via the *Feedback* view, and the developer can issue the refund. Please provide the following details from your receipt email:
+
+* Order number
+* Order date
+* Your account (Google account email)
+
+Please note that once a purchase is refunded, the corresponding product will stop working.
 endif::android[]
 
 === Feedback and support
