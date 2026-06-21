@@ -559,6 +559,24 @@ endif::ios[]
 The TCP KISS connection method does not support authentication. Do not make a TCP KISS TNC available to the Internet with port forwarding, as anyone on the Internet could connect to it and transmit packets. Always use a VPN to connect to a remote TNC.
 ====
 
+ifdef::android[]
+=== TNC and Beacon status on the map
+
+When a TNC connection is active (connected, or trying to connect) or beaconing is enabled, a status overlay appears at the top of the map, continuing down from the status bar. It shows one line for the TNC and one for beaconing.
+
+The *TNC* line shows:
+
+* A *TNC* badge coloured by the connection state: green when connected, orange while connecting or reconnecting, and grey when idle. While the TNC is not connected, the badge text is crossed out with a diagonal line.
+* Two small *RX* and *TX* indicators. *RX* lights up green while a signal is being received and *TX* lights up red while transmitting; both labels are dimmed while the TNC is not connected. With the software DSP modem the indicators follow the real receive (DCD) and transmit (PTT) state of the modem. With an external KISS TNC, which does not report this, each indicator instead blinks briefly whenever a packet is received or transmitted.
+* The most recently received or transmitted raw packet, truncated to fit. When the packet was sent by your own station (its source callsign matches the selected beacon profile), it is shown in *bold*.
+
+The *Beacon* line shows a green *Beacon* badge, which briefly flashes brighter each time a beacon is transmitted, and the digipeaters that have repeated your beacons.
+
+When beaconing via a TNC, a *REP* badge next to the *Beacon* badge shows at a glance whether your beacons are getting out. It is bright green when your most recent transmission has been repeated by a digipeater, plain green when one of your last three transmissions has been repeated, and grey otherwise.
+
+The digipeaters which repeated any of your last 5 transmitted packets are listed, and the ones that repeated your most recent transmission are shown in *bold*, so you can quickly see which stations heard you last. When you are not beaconing via a TNC, your selected callsign is shown as well; while beaconing via TNC the callsign is omitted to leave more room for the list of digipeaters.
+endif::android[]
+
 
 == There's More
 
