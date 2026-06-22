@@ -559,7 +559,6 @@ endif::ios[]
 The TCP KISS connection method does not support authentication. Do not make a TCP KISS TNC available to the Internet with port forwarding, as anyone on the Internet could connect to it and transmit packets. Always use a VPN to connect to a remote TNC.
 ====
 
-ifdef::android[]
 === TNC and Beacon status on the map
 
 When a TNC connection is active (connected, or trying to connect) or beaconing is enabled, a status overlay appears at the top of the map, continuing down from the status bar. It shows one line for the TNC and one for beaconing.
@@ -575,7 +574,6 @@ The *Beacon* line shows a green *Beacon* badge, which briefly flashes brighter e
 When beaconing via a TNC, a *REP* badge next to the *Beacon* badge shows at a glance whether your beacons are getting out. It is bright green when your most recent transmission has been repeated by a digipeater, plain green when one of your last three transmissions has been repeated, and grey otherwise.
 
 The digipeaters which repeated any of your last 5 transmitted packets are listed, and the ones that repeated your most recent transmission are shown in *bold*, so you can quickly see which stations heard you last. When you are not beaconing via a TNC, your selected callsign is shown as well; while beaconing via TNC the callsign is omitted to leave more room for the list of digipeaters.
-endif::android[]
 
 
 == There's More
