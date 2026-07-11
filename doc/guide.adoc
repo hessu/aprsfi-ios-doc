@@ -184,6 +184,16 @@ Please note that the positions will by default only be uploaded to aprs.fi. They
 
 Transmitting positions on the APRS-IS requires an amateur radio license and valid callsign.
 
+=== Beacon switches
+
+Beaconing is controlled with the switches at the top of the *Beacon* tab:
+
+* The first switch, at the top, is the master switch: it turns position beaconing on and off.
+* *Beacon via TNC* sends the position beacons out via the attached TNC and radio. This switch is only shown when a TNC has been selected in the app.
+* *Beacon via APRS-IS* uploads the positions to the APRS-IS network, instead of creating a "Web station" on aprs.fi directly. This switch is only shown while the Extra Features subscription is active.
+
+When neither of the additional switches is enabled, the positions are only uploaded directly to aprs.fi, and the station appears as a "Web station". Enabling *Beacon via TNC* or *Beacon via APRS-IS* switches off the direct upload, and the station appears on aprs.fi as a regular APRS station instead. Both may be enabled at the same time, to transmit the beacons both on the radio and to the APRS-IS.
+
 === Beacon profiles
 
 You may set up multiple APRS station profiles in the app, each with different symbol and other settings, allowing quick switching between the stations.
