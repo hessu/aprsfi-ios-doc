@@ -156,7 +156,7 @@ endif::ios[]
 
 === Station details view
 
-Pull the information table down to refresh the information. It will be refreshed periodically, too.
+To refresh the station information right away, pull the information table down until the refresh indicator appears, and release. It will be refreshed periodically, too.
 
 image::info-show-graphs@2x.png[Show graphs,32,32,float="right",align="center"]
 Graphs of speed, altitude, weather and telemetry can be drawn for many stations.
