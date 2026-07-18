@@ -138,6 +138,16 @@ ifdef::ios[]
 The app currently uses Apple Maps for the map view.
 endif::ios[]
 
+=== Dead reckoning of moving stations
+
+For stations which have recently reported that they are moving, the app draws a blue dead reckoning line on the map, from the last reported position to the station's estimated current position. The estimate is calculated from the speed and course reported in the station's most recent packet, in the same way as on the aprs.fi web service map.
+
+The line is redrawn regularly, so it keeps growing while no new position packets are received from the station. The line fades away as the last reported position gets older, and no estimate is drawn any more when the position is more than 30 minutes old.
+
+Please keep in mind that the estimated position is only an estimate: the station may well have turned, changed speed or stopped after the last packet was transmitted.
+
+Dead reckoning is enabled by default. It can be turned off in the *More* tab -> *Settings* -> *Map view* -> *Dead reckoning*.
+
 === The app remembers your last view
 
 The application stores the last view and map settings, so the next time you open the app, it will show the same view as you left it. It remembers filter settings, the tracked stations, and the map position and zoom level. It will even remember them if you power off the device and turn it back on later.
