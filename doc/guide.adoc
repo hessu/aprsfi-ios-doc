@@ -335,6 +335,22 @@ of the message threads view. This will enable the edit mode, where you can selec
 
 To delete all threads containing a specific word or phrase, enter the search term in the search field at the top of the message threads view, then tap the *Select all* button in the bottom left corner, and the *Delete* button in the bottom right. This will delete all threads matching the search term. This is useful for deleting all *APRS Thursday* messages, which contain the word *HOTG*.
 
+=== Blocking messages from stations
+
+If you receive unwanted messages from a station, you can block it. Messages from blocked stations are quietly discarded, and you are also not able to send messages to blocked stations. Blocking always applies to the plain callsign without the SSID number, so it covers all SSIDs of the blocked station.
+
+A station can be blocked in a few ways:
+
+* In the *station details* view, tap the *More* button and select *Block messages*.
+* In a message thread, tap the menu button in the top right corner and select *Block messages*.
+* In the *More* tab -> *Blocked stations*, tap the *+* button and enter the callsign to block.
+
+The list of blocked stations can be viewed in the *More* tab -> *Blocked stations*. To unblock a station, tap the *Delete* (trash can) button on the row of the blocked callsign. While a station is blocked, its callsign is shown in red with a strike-through in the title of the message thread.
+
+The blocklist is stored in your aprs.fi user account, so blocking requires being signed in. The same blocklist is automatically used by all of your devices signed in to the same account, and messages from blocked stations are discarded whether they arrive via the APRS-IS network or directly over the radio from a TNC. The list can contain up to 100 callsigns.
+
+Messages received before the sender was blocked remain visible until you delete them.
+
 == Connecting to a radio
 
 The aprs.fi app supports multiple methods for connecting to a radio or TNC (Terminal Node Controller) to transmit and receive APRS packets. The connection method depends on the hardware you have available.
