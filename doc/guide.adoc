@@ -641,6 +641,38 @@ The iGate is enabled from the *More* tab -> iGate. The iGate will use the callsi
 A table of recently heard stations can be accessed from the *iGate* tab. It shows the callsign, symbol, distance, and the time of the last heard packet for each station. When packets from a station are received via different paths, all the paths are displayed. The table is also maintained when the iGate is disabled.
 
 
+=== Offline maps
+
+Offline maps let you download map areas onto the device and view them on the map without an internet connection — handy in the backcountry, or anywhere mobile data is slow or unavailable. Offline maps are an Extra feature, so an active subscription is required to download them.
+
+Manage your downloaded maps from the *More* tab -> *Offline maps*.
+
+==== Showing offline maps on the map
+
+Turn on *Show on map* to draw your downloaded maps on top of the normal map. They keep working when there is no internet connection.
+
+Offline maps are drawn on the *Navigation* map style only, not on the satellite or hybrid styles.
+
+==== Downloading a map area
+
+1. Tap *Download new map*.
+2. Search for a city, region or place, or tap *Current map area* to start from the area you are already viewing.
+3. Pan and zoom the map to frame the area to download inside the selection box. Everything inside the box is downloaded.
+4. Give the map a *Name*.
+5. Choose the *Detail* level. *Standard* is a good balance for a wide area, while *High* keeps streets sharp when you zoom in closely, at the cost of a larger download.
+6. The *Estimated size* updates as you reframe the area or change the detail level. When you are happy with it, tap *Download*.
+
+The download runs in the background. You can follow its progress on the *Offline maps* screen and cancel it at any time.
+
+To keep storage in check there are a few limits: you can keep up to 10 offline maps at once, each area has a maximum size, and areas may not overlap each other. If a framed area is too large or would exceed a limit, the app tells you before downloading — zoom in, lower the detail level, or remove an existing map.
+
+==== Managing offline maps
+
+Downloaded maps are listed on the *Offline maps* screen with their size and age. Tap a map to rename it, view its details (size, zoom levels, download date and map data source), or remove it to free up space. The total space used on the device is shown below the list.
+
+The offline map data is © OpenStreetMap contributors and Protomaps.
+
+
 === Map Overlays
 
 Custom map overlays can be loaded on top of the APRS map from the *More* tab -> *Map Overlays*. Each overlay is a named GeoJSON or KML file loaded from a URL or imported from a local file. KMZ files (zipped KML) are also supported. The maximum overlay file size is 50 MB.
