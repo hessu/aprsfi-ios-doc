@@ -43,6 +43,7 @@ Features currently included in the *Extra Features* subscription are:
 * "Soundcard" DSP modem / TNC
 * Long time ranges on map and graph views
 * Up to 10 station profiles in Beacon
+* Offline maps
 
 === Signing up for the aprs.fi account
 
