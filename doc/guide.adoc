@@ -655,8 +655,9 @@ Please make sure that your license allows automatic or unattended operation if y
 
 * *Fill-in digipeater (WIDE1-1 only)* repeats only packets requesting a single *WIDE1-1* hop. This is the right choice for most mobile and portable stations, filling gaps in the coverage of the wide-area digipeaters.
 * *Wide-area digipeater (WIDEn-N, TRACEn-N)* also handles *WIDEn-N* and *TRACEn-N* paths of up to 4 hops.
+* *Custom aliases only* ignores *WIDE* and *TRACE*, and repeats packets only on your own callsign and the additional aliases configured below.
 
-Packets addressed to your own callsign-SSID are repeated in both modes. When repeating, the digipeater inserts its own callsign into the packet path, so the route of the packet can be seen. Packets requesting an excessive number of hops are repeated only when heard directly from the originating station, and then with the path terminated, so that they are not repeated further.
+Packets addressed to your own callsign-SSID are repeated in all modes. When repeating, the digipeater inserts its own callsign into the packet path, so the route of the packet can be seen. Packets requesting an excessive number of hops are repeated only when heard directly from the originating station, and then with the path terminated, so that they are not repeated further.
 
 ==== Additional aliases
 
