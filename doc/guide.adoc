@@ -270,6 +270,38 @@ The app will continue to transmit your position in the background, if it is allo
 The `ALLOW LOCATION ACCESS` setting should be set to `Always`. If you select `While Using the App`, the app will only transmit your position when it is in the foreground and the screen is not locked.
 endif::ios[]
 
+=== Privacy zones
+
+Privacy zones keep places such as your home or workplace off the map. While you are inside an enabled privacy zone, automatic position beacons are not transmitted, neither via the APRS-IS nor via a TNC. Beaconing resumes automatically when you leave the zone.
+
+The accuracy of the position fix is taken into account: if your position may be inside a zone, it counts as inside.
+
+Privacy zones are managed from the *More* tab -> *Privacy zones*, or with the *Privacy zones* button in the *Beacon* tab.
+
+==== Adding a privacy zone
+
+1. Tap *Add privacy zone*.
+2. Search for a place, or tap *Around my current location*.
+3. Pan and zoom the map to frame the zone inside the selection box.
+4. Choose the *Shape*: a *Circle* is the largest circle that fits in the box, and a *Rectangle* covers the whole box.
+5. Give the zone a name, and tap *Save*.
+
+You can keep up to 50 privacy zones, and each zone must be less than 100 km across.
+
+==== Managing privacy zones
+
+The zones are listed on the *Privacy zones* screen with their size. Each zone can be enabled and disabled with the switch next to it; a disabled zone has no effect. Tap a zone to rename it, view its shape and size, or delete it.
+
+Turn on *Show on map* to draw your enabled privacy zones on the map.
+
+==== Beaconing inside a privacy zone
+
+While you are inside a privacy zone, the *Beacon* tab shows which zone has paused automatic beaconing, and the beacon status line on the map shows an orange badge with a crossed-out eye.
+
+You can still transmit a beacon manually with *Beacon now*. Inside a privacy zone it takes two presses, so that a stray tap does not reveal the location: the first press changes the button to *Press again to beacon in zone*, and a second press within a few seconds transmits the beacon.
+
+Privacy zones only stop new beacons from being transmitted. Positions transmitted earlier, before a zone was added, remain in the aprs.fi history and in other services' archives.
+
 === Deleting uploaded position history
 
 If you wish to delete the position history uploaded to aprs.fi, go to the *Beacon* tab, scroll down to the bottom, and tap the *Delete station and all data* button. This will delete all positions uploaded by the app from the aprs.fi service.
