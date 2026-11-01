@@ -44,6 +44,7 @@ Features currently included in the *Extra Features* subscription are:
 * Long time ranges on map and graph views
 * Up to 10 station profiles in Beacon
 * Offline maps
+* Digipeater
 
 === Signing up for the aprs.fi account
 
@@ -635,11 +636,45 @@ Application settings can be accessed from the *More* tab -> Settings. Settings a
 
 === iGate
 
-A basic receive-only iGate is available in the app. It will receive packets from a TNC, and upload them to the APRS-IS via the aprs.fi backend. The iGate currently does not transmit any packets, and it does not support digipeating.
+A basic receive-only iGate is available in the app. It will receive packets from a TNC, and upload them to the APRS-IS via the aprs.fi backend. The iGate currently does not transmit any packets: messages and other traffic from the APRS-IS are not gated to RF. Repeating packets on RF is done by the <<Digipeater>>, which can be used together with the iGate.
 
 The iGate is enabled from the *More* tab -> iGate. The iGate will use the callsign-SSID selected in the *Beacon* tab.
 
 A table of recently heard stations can be accessed from the *iGate* tab. It shows the callsign, symbol, distance, and the time of the last heard packet for each station. When packets from a station are received via different paths, all the paths are displayed. The table is also maintained when the iGate is disabled.
+
+
+=== Digipeater
+
+The app can act as an APRS digipeater: it repeats packets received from a TNC back to the radio channel, according to the packet path requested by the transmitting station. The digipeater is an Extra feature, so logging in and an active subscription are required to use it.
+
+The digipeater is enabled from the *More* tab -> *Digipeater*. It uses the callsign-SSID selected in the *Beacon* tab, and transmits through the connected TNC, which must be able to transmit. If the TNC is disconnected, the digipeater waits, and starts repeating packets again when the TNC is connected.
+
+Please make sure that your license allows automatic or unattended operation if you leave the digipeater running, and coordinate with your local APRS network before running a wide-area digipeater.
+
+==== Digipeater mode
+
+* *Fill-in digipeater (WIDE1-1 only)* repeats only packets requesting a single *WIDE1-1* hop. This is the right choice for most mobile and portable stations, filling gaps in the coverage of the wide-area digipeaters.
+* *Wide-area digipeater (WIDEn-N, TRACEn-N)* also handles *WIDEn-N* and *TRACEn-N* paths of up to 4 hops.
+
+Packets addressed to your own callsign-SSID are repeated in both modes. When repeating, the digipeater inserts its own callsign into the packet path, so the route of the packet can be seen. Packets requesting an excessive number of hops are repeated only when heard directly from the originating station, and then with the path terminated, so that they are not repeated further.
+
+==== Additional aliases
+
+Aliases can be added to repeat on in addition to your own callsign, for example a regional alias. An alias without an SSID also handles its n-N form (*TEST3-3*) like WIDEn-N, inserting your callsign into the path. An alias with an SSID, such as *ECHO-1*, is matched exactly.
+
+==== Repeat delay
+
+With a *Repeat delay* set, the digipeater works in viscous mode: a received packet is held for the selected number of seconds (plus a small random delay), and dropped if another digipeater repeats it first. This avoids duplicate transmissions when a wide-area digipeater is within range, so that the app only fills in when nobody else has repeated the packet.
+
+In viscous mode only packets that no digipeater has repeated yet (first hop) are held and repeated. A packet already repeated by another digipeater, such as one with a *WIDE2-1* path left over from *WIDE2-2*, is not repeated.
+
+With *Off (repeat immediately)* selected, packets are repeated as soon as they are received.
+
+==== Duplicates and rate limiting
+
+A packet is repeated only once: copies of a repeated packet heard again within 30 seconds, through other digipeaters, are dropped as duplicates. Transmissions are also rate limited to protect the radio channel.
+
+The *Digipeater* view shows the number of packets received, digipeated and dropped as duplicates during the last hour. The *Digipeated packets* list shows the most recently repeated packets, with the path of each packet as received (RX) and as transmitted (TX).
 
 
 === Offline maps
